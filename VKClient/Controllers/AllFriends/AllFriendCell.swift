@@ -11,7 +11,7 @@ import UIKit
 class AllFriendCell: UITableViewCell {
 
     @IBOutlet weak var friendName: UILabel!
-    @IBOutlet weak var AvatarShadowView: AvatarShadowView!
+    @IBOutlet weak var avatarShadowView: AvatarShadowView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

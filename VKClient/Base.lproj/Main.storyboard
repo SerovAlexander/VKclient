@@ -191,7 +191,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="AvatarShadowView" destination="5gt-Y1-ih0" id="CFP-Wp-X9X"/>
+                                    <outlet property="avatarShadowView" destination="5gt-Y1-ih0" id="hQd-IM-YYP"/>
                                     <outlet property="friendName" destination="zGx-ZN-ewj" id="anM-5k-KJN"/>
                                 </connections>
                             </tableViewCell>

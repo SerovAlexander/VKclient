@@ -38,7 +38,7 @@ class AllFriendsVC: UITableViewController {
         let friend = Friends[indexPath.row]
         cell.friendName.text = friend.friendName
 //        cell.friendAvatar.image = friend.friendAvatar
-        cell.AvatarShadowView.friendAvatar.image = friend.friendAvatar
+        cell.avatarShadowView.friendAvatar.image = friend.friendAvatar
         return cell
     }
 

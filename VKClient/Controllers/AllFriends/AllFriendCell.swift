@@ -11,14 +11,12 @@ import UIKit
 class AllFriendCell: UITableViewCell {
 
     @IBOutlet weak var friendName: UILabel!
-    @IBOutlet weak var friendAvatar: UIImageView!
+    @IBOutlet weak var AvatarShadowView: AvatarShadowView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.friendAvatar.layer.cornerRadius = 60 //self.friendAvatar.frame.size.width / 2
-        self.friendAvatar.layer.masksToBounds = true
-        self.friendAvatar.layer.contentsGravity = .resize
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -6,8 +6,8 @@
 //  Copyright © 2019 mac. All rights reserved.
 //
 
-import UIKit
-
-class FriendCell: UICollectionViewCell {
-    @IBOutlet weak var avatar: UIImageView!
-}
+//import UIKit
+//
+//class FriendCell: UICollectionViewCell {
+//    @IBOutlet weak var avatar: UIImageView!
+//}

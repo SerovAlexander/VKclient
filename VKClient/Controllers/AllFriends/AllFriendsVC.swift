@@ -57,6 +57,11 @@ class AllFriendsVC: UITableViewController {
         vc.friend = friend
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let character = firstCharactes[section]
+        return String(character)
+    }
  
     private func sortFriendsByCharacters(_ friends:[friend]) -> (characters: [Character], sortedFriends: [Character: [friend]]) {
         

@@ -10,7 +10,7 @@ import UIKit
 
 class FriendXIBCell: UICollectionViewCell {
 
-   @IBOutlet weak var avatar: UIImageView!
+   @IBOutlet weak var friendAvatar: UIImageView!
    @IBOutlet weak var heartImageView: UIImageView!
     @IBOutlet weak var likeCountLabel: UILabel!
 

@@ -23,4 +23,10 @@ let Kokorin = friend(friendName: "Александр Кокорин", friendAvat
 let Zhirkov = friend(friendName: "Юрий Жирков", friendAvatar: UIImage(named: "Zhirkov"))
 let Kuzaev = friend(friendName: "Далер Кузяев", friendAvatar: UIImage(named: "Kuzaev"))
 //let Semak = friend(friendName: "Сергей Семак", friendAvatar: UIImage(named: "semak"))
+
 var friends: [friend] = [Stive, David, Dzuba, Tim, Semak, Kokorin, Zhirkov, Kuzaev]
+
+
+
+
+

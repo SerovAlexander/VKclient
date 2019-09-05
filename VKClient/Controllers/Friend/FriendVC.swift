@@ -8,11 +8,10 @@
 
 import UIKit
 
-
-
 class FriendVC: UICollectionViewController {
     
-   var friend: friend?
+    var friend: friend?
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +38,7 @@ class FriendVC: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendXIBCell", for: indexPath) as! FriendXIBCell
         
-       cell.friendAvatar.image = self.friend?.friendAvatar
+       cell.friendAvatar.image = friend?.friendAvatar
         return cell
     
 //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCell

@@ -38,9 +38,9 @@ class AllFriendsVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllFriendCell") as! AllFriendCell
         
         let character = firstCharactes[indexPath.section]
-        
+
         if let friends = sortedFriends[character] {
-        
+
         let friend = friends[indexPath.row]
         cell.friendName.text = friend.friendName
         cell.avatarShadowView.friendAvatar.image = friend.friendAvatar
@@ -50,12 +50,16 @@ class AllFriendsVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         let friend = friends[indexPath.row]
         
+        let character = firstCharactes[indexPath.section]
+        
+        if let friends = sortedFriends[character] {
+        let friend = friends[indexPath.row]
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"FriendVC") as! FriendVC
-        
         vc.friend = friend
+        
         self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -83,3 +87,5 @@ class AllFriendsVC: UITableViewController {
         return (characters, sortedFriends)
     }
 }
+
+

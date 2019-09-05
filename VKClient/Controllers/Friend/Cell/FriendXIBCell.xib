@@ -58,7 +58,7 @@
                 <outlet property="heartImageView" destination="8ic-4f-Cah" id="dah-6B-M0y"/>
                 <outlet property="likeCountLabel" destination="Rbe-EH-GTA" id="swL-kN-tZV"/>
             </connections>
-            <point key="canvasLocation" x="153.62318840579712" y="131.25"/>
+            <point key="canvasLocation" x="-45" y="126"/>
         </collectionViewCell>
     </objects>
     <resources>

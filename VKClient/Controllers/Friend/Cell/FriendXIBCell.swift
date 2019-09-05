@@ -16,8 +16,8 @@ class FriendXIBCell: UICollectionViewCell {
 
     var likeCount = 0
     
-    
-    public var heartFilled = false {
+ // Поменять местами!
+    public var heartFilled = true {
         didSet {
             if heartFilled {
                 if likeCount != 0 {

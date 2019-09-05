@@ -10,14 +10,14 @@ import UIKit
 
 class FriendXIBCell: UICollectionViewCell {
 
-   @IBOutlet weak var avatar: UIImageView!
+   @IBOutlet weak var friendAvatar: UIImageView!
    @IBOutlet weak var heartImageView: UIImageView!
     @IBOutlet weak var likeCountLabel: UILabel!
 
     var likeCount = 0
     
-    
-    public var heartFilled = false {
+ // Поменять местами!
+    public var heartFilled = true {
         didSet {
             if heartFilled {
                 if likeCount != 0 {

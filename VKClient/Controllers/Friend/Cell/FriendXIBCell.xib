@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="230" height="246"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dzuba" translatesAutoresizingMaskIntoConstraints="NO" id="nVL-7d-lXc">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nVL-7d-lXc" userLabel="friendAvatar">
                         <rect key="frame" x="0.0" y="0.0" width="230" height="180"/>
                     </imageView>
                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FullHeart" translatesAutoresizingMaskIntoConstraints="NO" id="8ic-4f-Cah">
@@ -54,15 +54,14 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="230" height="246"/>
             <connections>
-                <outlet property="avatar" destination="nVL-7d-lXc" id="ihV-hr-9zI"/>
+                <outlet property="friendAvatar" destination="nVL-7d-lXc" id="Oti-xU-Ub1"/>
                 <outlet property="heartImageView" destination="8ic-4f-Cah" id="dah-6B-M0y"/>
                 <outlet property="likeCountLabel" destination="Rbe-EH-GTA" id="swL-kN-tZV"/>
             </connections>
-            <point key="canvasLocation" x="153.62318840579712" y="131.25"/>
+            <point key="canvasLocation" x="-45" y="126"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Dzuba" width="128" height="85"/>
         <image name="FullHeart" width="40" height="40"/>
     </resources>
 </document>

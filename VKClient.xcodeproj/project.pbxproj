@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041D1932231E7E0900B48FB3 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D1931231E7E0900B48FB3 /* NewsVC.swift */; };
+		041D1935231E7E9400B48FB3 /* NewsXIBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D1933231E7E9400B48FB3 /* NewsXIBCell.swift */; };
+		041D1936231E7E9400B48FB3 /* NewsXIBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041D1934231E7E9400B48FB3 /* NewsXIBCell.xib */; };
+		041D1938231FBD2900B48FB3 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D1937231FBD2900B48FB3 /* News.swift */; };
 		045BFE0D2306E02F008CB552 /* AllFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE0C2306E02F008CB552 /* AllFriendsVC.swift */; };
 		045BFE102306E092008CB552 /* AllFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE0F2306E092008CB552 /* AllFriendCell.swift */; };
 		045BFE37230828B5008CB552 /* MyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE36230828B5008CB552 /* MyGroupCell.swift */; };
 		045BFE3923082D72008CB552 /* MyGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE3823082D72008CB552 /* MyGroupVC.swift */; };
 		045BFE3D23083BFF008CB552 /* AllGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE3C23083BFF008CB552 /* AllGroupVC.swift */; };
 		045BFE44230856F0008CB552 /* FriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE43230856F0008CB552 /* FriendVC.swift */; };
-		045BFE4623085714008CB552 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE4523085714008CB552 /* FriendCell.swift */; };
 		046E37302316CDEA00402C74 /* AvatarShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E372F2316CDEA00402C74 /* AvatarShadowView.swift */; };
 		046E37342317E95D00402C74 /* FriendXIBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E37322317E95D00402C74 /* FriendXIBCell.swift */; };
 		046E37352317E95D00402C74 /* FriendXIBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046E37332317E95D00402C74 /* FriendXIBCell.xib */; };
@@ -28,13 +31,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041D1931231E7E0900B48FB3 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		041D1933231E7E9400B48FB3 /* NewsXIBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsXIBCell.swift; sourceTree = "<group>"; };
+		041D1934231E7E9400B48FB3 /* NewsXIBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsXIBCell.xib; sourceTree = "<group>"; };
+		041D1937231FBD2900B48FB3 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = VKClient/News/News.swift; sourceTree = SOURCE_ROOT; };
 		045BFE0C2306E02F008CB552 /* AllFriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFriendsVC.swift; sourceTree = "<group>"; };
 		045BFE0F2306E092008CB552 /* AllFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFriendCell.swift; sourceTree = "<group>"; };
 		045BFE36230828B5008CB552 /* MyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupCell.swift; sourceTree = "<group>"; };
 		045BFE3823082D72008CB552 /* MyGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupVC.swift; sourceTree = "<group>"; };
 		045BFE3C23083BFF008CB552 /* AllGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupVC.swift; sourceTree = "<group>"; };
 		045BFE43230856F0008CB552 /* FriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVC.swift; sourceTree = "<group>"; };
-		045BFE4523085714008CB552 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		046E372F2316CDEA00402C74 /* AvatarShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarShadowView.swift; sourceTree = "<group>"; };
 		046E37322317E95D00402C74 /* FriendXIBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendXIBCell.swift; sourceTree = "<group>"; };
 		046E37332317E95D00402C74 /* FriendXIBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendXIBCell.xib; sourceTree = "<group>"; };
@@ -61,10 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041D1930231E7DB600B48FB3 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				041D1931231E7E0900B48FB3 /* NewsVC.swift */,
+				041D1933231E7E9400B48FB3 /* NewsXIBCell.swift */,
+				041D1934231E7E9400B48FB3 /* NewsXIBCell.xib */,
+			);
+			name = News;
+			path = ../News;
+			sourceTree = "<group>";
+		};
 		045BFE0B2306E006008CB552 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				0493A58D22F435EC0025E7C9 /* ViewController.swift */,
+				041D1930231E7DB600B48FB3 /* News */,
 				045BFE0E2306E036008CB552 /* AllFriends */,
 				045BFE3E23084DB4008CB552 /* Friend */,
 				045BFE3B23083BDA008CB552 /* AllGroup */,
@@ -103,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				045BFE43230856F0008CB552 /* FriendVC.swift */,
-				045BFE4523085714008CB552 /* FriendCell.swift */,
+				046E37312317E8F200402C74 /* Cell */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -113,6 +131,7 @@
 			children = (
 				04961ABB230AE77A004F0F4E /* Group.swift */,
 				04961ABD230C024E004F0F4E /* User.swift */,
+				041D1937231FBD2900B48FB3 /* News.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,7 +164,6 @@
 		0493A58A22F435EC0025E7C9 /* VKClient */ = {
 			isa = PBXGroup;
 			children = (
-				046E37312317E8F200402C74 /* Cell */,
 				04F53FE323094C58009D0477 /* Views */,
 				045BFE4923087A58008CB552 /* Model */,
 				0493A58B22F435EC0025E7C9 /* AppDelegate.swift */,
@@ -228,6 +246,7 @@
 				0493A59622F435ED0025E7C9 /* LaunchScreen.storyboard in Resources */,
 				046E37352317E95D00402C74 /* FriendXIBCell.xib in Resources */,
 				0493A59322F435ED0025E7C9 /* Assets.xcassets in Resources */,
+				041D1936231E7E9400B48FB3 /* NewsXIBCell.xib in Resources */,
 				0493A59122F435EC0025E7C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,13 +260,15 @@
 			files = (
 				04961ABE230C024E004F0F4E /* User.swift in Sources */,
 				046E37302316CDEA00402C74 /* AvatarShadowView.swift in Sources */,
+				041D1938231FBD2900B48FB3 /* News.swift in Sources */,
 				0493A58E22F435EC0025E7C9 /* ViewController.swift in Sources */,
+				041D1932231E7E0900B48FB3 /* NewsVC.swift in Sources */,
 				0493A58C22F435EC0025E7C9 /* AppDelegate.swift in Sources */,
 				04F53FE523094C78009D0477 /* GradientView.swift in Sources */,
+				041D1935231E7E9400B48FB3 /* NewsXIBCell.swift in Sources */,
 				04961ABC230AE77A004F0F4E /* Group.swift in Sources */,
 				045BFE44230856F0008CB552 /* FriendVC.swift in Sources */,
 				045BFE0D2306E02F008CB552 /* AllFriendsVC.swift in Sources */,
-				045BFE4623085714008CB552 /* FriendCell.swift in Sources */,
 				045BFE102306E092008CB552 /* AllFriendCell.swift in Sources */,
 				045BFE37230828B5008CB552 /* MyGroupCell.swift in Sources */,
 				046E37342317E95D00402C74 /* FriendXIBCell.swift in Sources */,

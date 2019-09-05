@@ -113,6 +113,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WEk-0J-epy" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="oNK-pd-3uo"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w7n-72-Hs3">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -121,6 +122,7 @@
                     <connections>
                         <segue destination="dwx-vg-0kv" kind="relationship" relationship="viewControllers" id="prt-MI-LI5"/>
                         <segue destination="0Fd-D6-ZeA" kind="relationship" relationship="viewControllers" id="dxd-8o-LHB"/>
+                        <segue destination="sWN-aM-kjo" kind="relationship" relationship="viewControllers" id="Py9-Dc-7Yg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRt-n6-Zim" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,7 +212,7 @@
         <!--FriendVC-->
         <scene sceneID="doP-tP-2t5">
             <objects>
-                <collectionViewController storyboardIdentifier="FriendVC" id="0V7-EK-2Bh" customClass="FriendVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="FriendVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0V7-EK-2Bh" customClass="FriendVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fM0-6J-yna">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +258,7 @@
             </objects>
             <point key="canvasLocation" x="3886.9565217391309" y="-65.625"/>
         </scene>
-        <!--My GroupVC-->
+        <!--Сообщества-->
         <scene sceneID="7GN-Ir-jrm">
             <objects>
                 <tableViewController id="N7g-FU-Uxh" customClass="MyGroupVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -310,7 +312,7 @@
                             <outlet property="delegate" destination="N7g-FU-Uxh" id="Rv0-4B-NIX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Zap-uu-gZY">
+                    <navigationItem key="navigationItem" title="Сообщества" id="Zap-uu-gZY">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="8j5-3W-anN">
                             <connections>
                                 <action selector="searchGroupButton:" destination="N7g-FU-Uxh" id="w4Q-U6-J5s"/>
@@ -421,9 +423,70 @@
             </objects>
             <point key="canvasLocation" x="2097" y="617"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="56E-5k-baV">
+            <objects>
+                <viewController storyboardIdentifier="NewsVC" id="qJS-Rn-MKW" customClass="NewsVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uyz-bJ-UEl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aa0-zy-tXR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NewsXIBCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsXIBCell" id="g3q-vB-pLw" customClass="NewsXIBCell" customModule="VKClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g3q-vB-pLw" id="Ivm-EP-NQI" customClass="NewsXIBCell" customModule="VKClient" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Va-Z6-atP" firstAttribute="trailing" secondItem="aa0-zy-tXR" secondAttribute="trailing" id="0vj-z9-F39"/>
+                            <constraint firstItem="aa0-zy-tXR" firstAttribute="top" secondItem="6Va-Z6-atP" secondAttribute="top" id="2rr-tJ-nqu"/>
+                            <constraint firstItem="aa0-zy-tXR" firstAttribute="leading" secondItem="6Va-Z6-atP" secondAttribute="leading" id="KLw-G7-1Tw"/>
+                            <constraint firstItem="6Va-Z6-atP" firstAttribute="bottom" secondItem="aa0-zy-tXR" secondAttribute="bottom" id="V6U-yp-Sdv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Va-Z6-atP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новости" id="J9p-Lu-ZD8"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="aa0-zy-tXR" id="S2t-Bl-Ugm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wcm-69-pti" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2097" y="1320"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="Wdv-kY-hOY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sWN-aM-kjo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="News" id="z0x-EV-rlG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mTZ-dy-Zhk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qJS-Rn-MKW" kind="relationship" relationship="rootViewController" id="E1W-Kl-EnV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yjW-Yd-yro" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="1320"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Friend" width="24" height="24"/>
         <image name="Group" width="24" height="24"/>
+        <image name="News" width="24" height="24"/>
     </resources>
 </document>

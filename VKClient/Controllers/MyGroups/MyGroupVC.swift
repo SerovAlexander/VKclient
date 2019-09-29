@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class MyGroupVC: UITableViewController {
     
@@ -64,5 +65,15 @@ extension MyGroupVC: AllGroupDelegate {
             userGroups.append(group)
 //        }
         tableView.reloadData()
+    }
+    
+}
+
+
+
+extension MyGroupVC: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        NetworkService.getGroup(token: session.shared.token)
     }
 }

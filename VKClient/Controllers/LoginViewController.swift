@@ -71,11 +71,9 @@ extension LoginViewController: WKNavigationDelegate {
         
         print(session.shared.token)
         
-//        NetworkService.getGroup(token: session.shared.token)
-//        NetworkService.loadFriends(completion: <#(Result<[User]>) -> Void#>)
-//       NetworkService.getPhotos(token: session.shared.token)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! UIViewController
+        self.present(viewController, animated: true)
         
-        performSegue(withIdentifier: "login", sender: nil)
                 decisionHandler(.cancel)
         }
      

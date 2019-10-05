@@ -72,9 +72,10 @@ extension LoginViewController: WKNavigationDelegate {
         print(session.shared.token)
         
 //        NetworkService.getGroup(token: session.shared.token)
-       NetworkService.loadFriends(token: session.shared.token)
-//        NetworkService.getPhotos(token: session.shared.token)
+//        NetworkService.loadFriends(completion: <#(Result<[User]>) -> Void#>)
+//       NetworkService.getPhotos(token: session.shared.token)
         
+        performSegue(withIdentifier: "login", sender: nil)
                 decisionHandler(.cancel)
         }
      

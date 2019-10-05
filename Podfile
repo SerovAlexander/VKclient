@@ -8,6 +8,7 @@ target 'VKClient' do
   use_frameworks!
   
   pod 'Alamofire'
+  pod 'SwiftyJSON'
   # Pods for VKClient
 
 end

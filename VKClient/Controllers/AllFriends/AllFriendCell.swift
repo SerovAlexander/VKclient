@@ -24,5 +24,18 @@ class AllFriendCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    public func configure(with user: User) {
+        friendName.text = user.firstName + " " + user.secondName
+        
+//        if let url = friend.avatarUrl {
+//            NetworkService.fetchImage(by: url) { [weak self] result in
+//                switch result {
+//                case .success(let image):
+//                    self?.avatar.image = image
+//                case .failure:
+//                    break
+//                }
+//            }
+//        }
+    }
 }

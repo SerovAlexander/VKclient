@@ -22,6 +22,7 @@
 		046E37302316CDEA00402C74 /* AvatarShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E372F2316CDEA00402C74 /* AvatarShadowView.swift */; };
 		046E37342317E95D00402C74 /* FriendXIBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E37322317E95D00402C74 /* FriendXIBCell.swift */; };
 		046E37352317E95D00402C74 /* FriendXIBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046E37332317E95D00402C74 /* FriendXIBCell.xib */; };
+		0483A6912348F22100FDCBD2 /* newAllFriendsVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483A6902348F22100FDCBD2 /* newAllFriendsVCTableViewController.swift */; };
 		0493A58C22F435EC0025E7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493A58B22F435EC0025E7C9 /* AppDelegate.swift */; };
 		0493A58E22F435EC0025E7C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493A58D22F435EC0025E7C9 /* ViewController.swift */; };
 		0493A59122F435EC0025E7C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493A58F22F435EC0025E7C9 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		046E372F2316CDEA00402C74 /* AvatarShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarShadowView.swift; sourceTree = "<group>"; };
 		046E37322317E95D00402C74 /* FriendXIBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendXIBCell.swift; sourceTree = "<group>"; };
 		046E37332317E95D00402C74 /* FriendXIBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendXIBCell.xib; sourceTree = "<group>"; };
+		0483A6902348F22100FDCBD2 /* newAllFriendsVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newAllFriendsVCTableViewController.swift; sourceTree = "<group>"; };
 		0493A58822F435EC0025E7C9 /* VKClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0493A58B22F435EC0025E7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0493A58D22F435EC0025E7C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				045BFE0C2306E02F008CB552 /* AllFriendsVC.swift */,
 				045BFE0F2306E092008CB552 /* AllFriendCell.swift */,
+				0483A6902348F22100FDCBD2 /* newAllFriendsVCTableViewController.swift */,
 			);
 			path = AllFriends;
 			sourceTree = "<group>";
@@ -309,10 +312,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -345,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04961ABE230C024E004F0F4E /* User.swift in Sources */,
+				0483A6912348F22100FDCBD2 /* newAllFriendsVCTableViewController.swift in Sources */,
 				046E37302316CDEA00402C74 /* AvatarShadowView.swift in Sources */,
 				041D1938231FBD2900B48FB3 /* News.swift in Sources */,
 				0493A58E22F435EC0025E7C9 /* ViewController.swift in Sources */,

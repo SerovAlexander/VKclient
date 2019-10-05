@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 struct friend {
     let friendName: String
@@ -28,5 +30,16 @@ var friends: [friend] = [Stive, David, Dzuba, Tim, Semak, Kokorin, Zhirkov, Kuza
 
 
 
-
-
+class User {
+    let id: String
+    let firstName: String
+    let secondName: String
+//    let avatar: URL
+    
+    init(_ json: JSON) {
+        self.id = json["id"].stringValue
+        self.firstName = json["first_name"].stringValue
+        self.secondName = json["last_name"].stringValue
+    }
+    
+}

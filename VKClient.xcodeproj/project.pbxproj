@@ -102,7 +102,6 @@
 				041D1930231E7DB600B48FB3 /* News */,
 				045BFE0E2306E036008CB552 /* AllFriends */,
 				045BFE3E23084DB4008CB552 /* Friend */,
-				045BFE3B23083BDA008CB552 /* AllGroup */,
 				045BFE3123082562008CB552 /* MyGroups */,
 			);
 			path = Controllers;
@@ -139,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				045BFE43230856F0008CB552 /* FriendVC.swift */,
+				045BFE3B23083BDA008CB552 /* AllGroup */,
 				046E37312317E8F200402C74 /* Cell */,
 			);
 			path = Friend;
@@ -312,11 +312,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

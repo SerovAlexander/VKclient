@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class AllFriendCell: UITableViewCell {
 
@@ -26,16 +27,6 @@ class AllFriendCell: UITableViewCell {
     }
     public func configure(with user: User) {
         friendName.text = user.firstName + " " + user.secondName
-        
-//        if let url = friend.avatarUrl {
-//            NetworkService.fetchImage(by: url) { [weak self] result in
-//                switch result {
-//                case .success(let image):
-//                    self?.avatar.image = image
-//                case .failure:
-//                    break
-//                }
-//            }
-//        }
+        avatarShadowView.friendAvatar.kf.setImage(with: user.avatar)
     }
 }

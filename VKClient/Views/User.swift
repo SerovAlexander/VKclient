@@ -24,7 +24,6 @@ let Semak = friend(friendName: "Сергей Семак", friendAvatar: UIImage(
 let Kokorin = friend(friendName: "Александр Кокорин", friendAvatar: UIImage(named: "Kokorin"))
 let Zhirkov = friend(friendName: "Юрий Жирков", friendAvatar: UIImage(named: "Zhirkov"))
 let Kuzaev = friend(friendName: "Далер Кузяев", friendAvatar: UIImage(named: "Kuzaev"))
-//let Semak = friend(friendName: "Сергей Семак", friendAvatar: UIImage(named: "semak"))
 
 var friends: [friend] = [Stive, David, Dzuba, Tim, Semak, Kokorin, Zhirkov, Kuzaev]
 
@@ -34,12 +33,15 @@ class User {
     let id: String
     let firstName: String
     let secondName: String
+    let avatar: URL?
 //    let avatar: URL
     
     init(_ json: JSON) {
         self.id = json["id"].stringValue
         self.firstName = json["first_name"].stringValue
         self.secondName = json["last_name"].stringValue
+        let avatarString = json["photo_100"].stringValue
+        self.avatar = URL(string: avatarString)
     }
     
 }

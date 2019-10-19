@@ -38,6 +38,7 @@ class LoginViewController: UIViewController {
         let request = URLRequest(url: urlComponents.url!)
         
         webView.load(request)
+        
     }
     
 }
@@ -73,8 +74,10 @@ extension LoginViewController: WKNavigationDelegate {
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! UIViewController
         self.present(viewController, animated: true)
-        
+
                 decisionHandler(.cancel)
         }
-     
+    
 }
+
+

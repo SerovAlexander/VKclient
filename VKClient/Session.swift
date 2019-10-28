@@ -8,12 +8,12 @@
 
 import Foundation
 
-class session {
+class Session {
     
     var token = ""
 //    var id = ""
     
-    static let shared = session()
+    static let shared = Session()
     init() {}
 }
 

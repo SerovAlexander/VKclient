@@ -23,7 +23,7 @@ class NetworkService {
         let path = "/method/groups.get"
         
         let params: Parameters = [
-          "access_token":session.shared.token,
+          "access_token":Session.shared.token,
           "extended": 1,
           "v": "5.92"
         ]
@@ -41,7 +41,7 @@ class NetworkService {
         let path = "/method/friends.get"
         
         let params: Parameters = [
-            "access_token": session.shared.token,
+            "access_token": Session.shared.token,
             "fields":"nickname",
             "v": "5.8"
         ]
@@ -62,7 +62,7 @@ class NetworkService {
         let path = "/method/photos.getAll"
         
         let params: Parameters = [
-            "access_token": session.shared.token,
+            "access_token": Session.shared.token,
             "no_service_albums": "1",
             "v": "5.77"
         ]

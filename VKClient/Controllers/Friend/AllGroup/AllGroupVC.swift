@@ -4,7 +4,7 @@
 //
 //  Created by mac on 17/08/2019.
 //  Copyright © 2019 mac. All rights reserved.
-//
+
 
 import UIKit
 
@@ -16,18 +16,18 @@ protocol AllGroupDelegate {
 class AllGroupVC: UITableViewController {
 
     @IBOutlet weak var GroupImage: UIImageView!
-    
-    
+
+
     var delegate: AllGroupDelegate?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-        
+
+
     }
 
-   
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return Groups.count
@@ -35,7 +35,7 @@ class AllGroupVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell") as! MyGroupCell
-        
+
         let group = Groups[indexPath.row]
         cell.GroupName.text = group.nameGroup
         cell.GroupImage.image = group.imageGroup
@@ -47,5 +47,5 @@ class AllGroupVC: UITableViewController {
         delegate?.vc(self, didSelectGroup: group)
         self.navigationController?.popViewController(animated: true)
     }
-    
+
 }

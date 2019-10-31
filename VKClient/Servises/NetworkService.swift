@@ -29,10 +29,17 @@ class NetworkService {
           "v": "5.92"
         ]
         
-        NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON {response in
-            guard let json = response.value else {return}
+        NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseData {response in
             
-            print(json)
+            guard let data = response.value else {return}
+            
+            let groups = try! JSONDecoder().decode([Groupss].self, from: data )
+             print(groups)
+            
+            
+//            guard let json = response.value else {return}
+//
+//            print(json)
         }
     }
     
@@ -40,7 +47,6 @@ class NetworkService {
     static func loadFriends(completion: @escaping (Result<[User]>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/friends.get"
-        
         let params: Parameters = [
             "access_token": session.shared.token,
             "fields":["nickname","photo_100"],

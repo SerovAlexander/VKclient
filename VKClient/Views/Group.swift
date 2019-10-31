@@ -21,3 +21,27 @@ let Girls = Group(nameGroup: "Девушки", imageGroup: UIImage(named: "Girls
 let Cinema = Group(nameGroup: "Кино", imageGroup: UIImage(named: "Cinema"))
 
 var Groups: [Group] = [Music,Books,Swift,Girls,Cinema]
+
+
+
+struct Groupss: Codable {
+    let response: Response
+}
+
+struct Response: Codable {
+    let item: Item
+}
+
+struct Item: Codable {
+    let id: Int
+    let name: String
+    let photo100: String
+
+    enum GroupKeys: String, CodingKey {
+        case id
+        case nameGroup = "name"
+        case imageGroup = "photo100"
+
+    }
+
+}

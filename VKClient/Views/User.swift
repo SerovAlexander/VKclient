@@ -30,6 +30,7 @@ var friends: [friend] = [Stive, David, Dzuba, Tim, Semak, Kokorin, Zhirkov, Kuza
 
 
 class User {
+    
     let id: String
     let firstName: String
     let secondName: String

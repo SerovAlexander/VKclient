@@ -30,12 +30,18 @@ class NetworkService {
         ]
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseData {response in
-            
-            guard let data = response.value else {return}
-            
-            let groups = try! JSONDecoder().decode([Groupss].self, from: data )
-             print(groups)
-            
+            switch response.result {
+            case .success(let data):
+                let decoder = JSONDecoder()
+                do {
+                    let groups = try decoder.decode([Groupss].self, from: data)
+                    print(groups)
+                } catch {
+                    print("\(error) Vot tut oshibka")
+                }
+            case .failure(let error):
+                print("Tozhe Shlyapa")
+            }
             
 //            guard let json = response.value else {return}
 //

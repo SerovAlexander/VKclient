@@ -34,7 +34,7 @@ class NetworkService {
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {
-                    let groups = try decoder.decode([Groupss].self, from: data)
+                    let groups = try decoder.decode(Groupss.self, from: data)
                     print(groups)
                 } catch {
                     print("\(error) Vot tut oshibka")

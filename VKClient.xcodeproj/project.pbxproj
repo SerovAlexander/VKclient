@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04138D41237040310050D35D /* NewMyGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04138D40237040310050D35D /* NewMyGroupVC.swift */; };
 		041D1932231E7E0900B48FB3 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D1931231E7E0900B48FB3 /* NewsVC.swift */; };
 		041D1935231E7E9400B48FB3 /* NewsXIBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D1933231E7E9400B48FB3 /* NewsXIBCell.swift */; };
 		041D1936231E7E9400B48FB3 /* NewsXIBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041D1934231E7E9400B48FB3 /* NewsXIBCell.xib */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04138D40237040310050D35D /* NewMyGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMyGroupVC.swift; sourceTree = "<group>"; };
 		041D1931231E7E0900B48FB3 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		041D1933231E7E9400B48FB3 /* NewsXIBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsXIBCell.swift; sourceTree = "<group>"; };
 		041D1934231E7E9400B48FB3 /* NewsXIBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsXIBCell.xib; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				045BFE3823082D72008CB552 /* MyGroupVC.swift */,
 				045BFE36230828B5008CB552 /* MyGroupCell.swift */,
+				04138D40237040310050D35D /* NewMyGroupVC.swift */,
 			);
 			path = MyGroups;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				045BFE102306E092008CB552 /* AllFriendCell.swift in Sources */,
 				04BE54DB233F8E2D00BB356B /* NetworkService.swift in Sources */,
 				045BFE37230828B5008CB552 /* MyGroupCell.swift in Sources */,
+				04138D41237040310050D35D /* NewMyGroupVC.swift in Sources */,
 				044781B2233A8A4100CFED44 /* LoginViewController.swift in Sources */,
 				046E37342317E95D00402C74 /* FriendXIBCell.swift in Sources */,
 				045BFE3D23083BFF008CB552 /* AllGroupVC.swift in Sources */,

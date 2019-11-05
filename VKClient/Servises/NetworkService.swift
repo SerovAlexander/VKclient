@@ -19,7 +19,7 @@ class NetworkService {
     }()
     
 // Функция для получения групп пользователя
-    static func getGroup(token: String) {
+    static func getGroup(comletion: @escaping (Result<[Items]>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/groups.get"
         
@@ -35,17 +35,16 @@ class NetworkService {
                 let decoder = JSONDecoder()
                 do {
                     let groups = try decoder.decode(Groupss.self, from: data)
-                    print(groups)
+                    groups.response.items.forEach {print("\($0.name)")}
+                    comletion(.success(groups.response.items))
                 } catch {
                     print("\(error) Vot tut oshibka")
                 }
+                
             case .failure(let error):
                 print("Tozhe Shlyapa")
             }
             
-//            guard let json = response.value else {return}
-//
-//            print(json)
         }
     }
     

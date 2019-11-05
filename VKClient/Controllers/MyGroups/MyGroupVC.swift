@@ -28,7 +28,6 @@ class MyGroupVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
     }
     
   
@@ -74,6 +73,5 @@ extension MyGroupVC: AllGroupDelegate {
 extension MyGroupVC: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
-        NetworkService.getGroup(token: session.shared.token)
     }
 }

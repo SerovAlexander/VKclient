@@ -72,9 +72,9 @@ extension LoginViewController: WKNavigationDelegate {
         
         print(session.shared.token)
         
-        NetworkService.getGroup(token: session.shared.token)
         
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! UIViewController
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: " UITabBarController") as! UIViewController
         self.present(viewController, animated: true)
 
                 decisionHandler(.cancel)

@@ -10,6 +10,8 @@ target 'VKClient' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Kingfisher'
+  pod 'RealmSwift'
+  
   
   # Pods for VKClient
 

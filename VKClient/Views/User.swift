@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-import 
+import RealmSwift
 
 
 struct friend {
@@ -30,12 +30,12 @@ var friends: [friend] = [Stive, David, Dzuba, Tim, Semak, Kokorin, Zhirkov, Kuza
 
 
 
-class User {
+class User: Object {
     
-    let id: String
-    let firstName: String
-    let secondName: String
-    let avatar: URL?
+    @objc dynamic let id: String
+    @objc dynamic let firstName: String
+    @objc dynamic let secondName: String
+    @objc dynamic let avatar: URL?
 
     
     init(_ json: JSON) {

@@ -35,7 +35,7 @@ class User {
     let firstName: String
     let secondName: String
     let avatar: URL?
-//    let avatar: URL
+
     
     init(_ json: JSON) {
         self.id = json["id"].stringValue

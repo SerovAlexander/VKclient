@@ -27,6 +27,7 @@ class AllFriendCell: UITableViewCell {
     }
     public func configure(with user: User) {
         friendName.text = user.firstName + " " + user.secondName
-        avatarShadowView.friendAvatar.kf.setImage(with: user.avatar)
+        let url = URL(string: user.avatar)
+        avatarShadowView.friendAvatar.kf.setImage(with: url)
     }
 }

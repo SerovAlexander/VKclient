@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 struct Group {
     var nameGroup: String
@@ -32,10 +33,10 @@ class Groupss: Codable {
 class Response: Codable {
     let items: [Items]
 }
-class Items: Codable {
-    let id: Int
-    let name: String
-    let photo_100: URL?
+class Items: Object, Codable {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var photo_100: String = ""
     
 }
 

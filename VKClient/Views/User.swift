@@ -35,17 +35,16 @@ class User: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var firstName: String = ""
     @objc dynamic var secondName: String = ""
-    @objc dynamic var avatar: URL?
+    @objc dynamic var avatar: String = ""
 
     
-    convenience init(_ json: JSON) {
+     convenience init(_ json: JSON) {
         self.init()
         
         self.id = json["id"].stringValue
         self.firstName = json["first_name"].stringValue
         self.secondName = json["last_name"].stringValue
-        let avatarString = json["photo_100"].stringValue
-        self.avatar = URL(string: avatarString)
+        self.avatar = json["photo_100"].stringValue
     }
     
 }

@@ -26,7 +26,8 @@ class MyGroupCell: UITableViewCell {
     }
     public func configure(with group: Items) {
         GroupName.text = group.name
-        GroupImage.kf.setImage(with: group.photo_100)
+        let url = URL(string: group.photo_100)
+        GroupImage.kf.setImage(with: url)
 
        }
 }

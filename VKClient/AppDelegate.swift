@@ -17,12 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      
-        let config = Realm.Configuration(schemaVersion: 1)
+
+        // Задаю конфигурацию у базы данных.
+        let config = Realm.Configuration( schemaVersion: 1,  deleteRealmIfMigrationNeeded: true)
         Realm.Configuration.defaultConfiguration = config
-        
-        DataBase.clearDataBase()
-        
+     
         return true
     }
 

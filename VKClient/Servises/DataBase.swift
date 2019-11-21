@@ -16,7 +16,7 @@ class DataBase {
     let realm = try! Realm()
         print(realm.configuration.fileURL)
     try? realm.write {
-        realm.add(items)
+        realm.add(items, update: .all)
     
         }
     }

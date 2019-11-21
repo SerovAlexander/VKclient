@@ -22,7 +22,7 @@ class newAllFriendsVCTableViewController: UITableViewController {
             guard let self = self else { return }
             switch result {
             case .success(let users):
-               DataBase.save(items: users)
+                DataBase.save(items: users)
 //                self.users = users
                 self.tableView.reloadData()
             case .failure(let error):

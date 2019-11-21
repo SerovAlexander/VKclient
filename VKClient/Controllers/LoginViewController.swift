@@ -68,9 +68,10 @@ extension LoginViewController: WKNavigationDelegate {
         
 // Лучше переделать через проверку, получени ли токен или нет!
         
-        session.shared.token = (token ?? "token is empty")!
+        Session.shared.token = (token ?? "token is empty")!
         
-        print(session.shared.token)
+        print(Session.shared.token)
+
         
         
         

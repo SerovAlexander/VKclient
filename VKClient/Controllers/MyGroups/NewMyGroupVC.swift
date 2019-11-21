@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NewMyGroupVC: UITableViewController {
     
     
-    var newGroup = [Items]()
+//    var newGroup = [Items]()
+
+    private lazy var newGroup = try? Realm().objects(Items.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +23,8 @@ class NewMyGroupVC: UITableViewController {
            guard let self = self else { return }
            switch result {
            case .success(let groups):
-               self.newGroup = groups
+//               self.newGroup = groups
+            DataBase.save(items: groups)
                self.tableView.reloadData()
            case .failure(let error):
                fatalError(error.localizedDescription)
@@ -32,12 +36,12 @@ class NewMyGroupVC: UITableViewController {
        // MARK: - Table view data source
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          // #warning Incomplete implementation, return the number of rows
-        return newGroup.count
+        return newGroup?.count ?? 0
      }
 
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell", for: indexPath) as! MyGroupCell
-        let group = newGroup[indexPath.row]
+        guard let group = newGroup?[indexPath.row] else {return cell}
          cell.configure(with: group)
 
          return cell

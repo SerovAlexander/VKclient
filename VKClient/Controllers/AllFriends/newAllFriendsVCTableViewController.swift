@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class newAllFriendsVCTableViewController: UITableViewController {
 
-    var users = [User]()
-    
+//    var users = [User]()
+//
+    private lazy var users = try? Realm().objects(User.self).sorted(byKeyPath: "id")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,8 @@ class newAllFriendsVCTableViewController: UITableViewController {
             guard let self = self else { return }
             switch result {
             case .success(let users):
-                self.users = users
+               DataBase.save(items: users)
+//                self.users = users
                 self.tableView.reloadData()
             case .failure(let error):
                 fatalError(error.localizedDescription)
@@ -32,12 +35,12 @@ class newAllFriendsVCTableViewController: UITableViewController {
        // MARK: - Table view data source
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          // #warning Incomplete implementation, return the number of rows
-        return users.count
+        return users?.count ?? 0
      }
      
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "AllFriendCell", for: indexPath) as! AllFriendCell
-         let user = users[indexPath.row]
+        guard let user = users?[indexPath.row] else {return cell}
          cell.configure(with: user)
 
          return cell

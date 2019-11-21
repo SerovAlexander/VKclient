@@ -38,5 +38,9 @@ class Items: Object, Codable {
     @objc dynamic var name: String = ""
     @objc dynamic var photo_100: String = ""
     
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
 

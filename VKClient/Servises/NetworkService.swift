@@ -24,7 +24,7 @@ class NetworkService {
         let path = "/method/groups.get"
         
         let params: Parameters = [
-          "access_token":session.shared.token,
+          "access_token":Session.shared.token,
           "extended": 1,
           "v": "5.92"
         ]
@@ -35,7 +35,7 @@ class NetworkService {
                 let decoder = JSONDecoder()
                 do {
                     let groups = try decoder.decode(Groupss.self, from: data)
-                    groups.response.items.forEach {print("\($0.name)")}
+//                    groups.response.items.forEach {print("\($0.name)")}
                     comletion(.success(groups.response.items))
                 } catch {
                     print("\(error) Vot tut oshibka")
@@ -53,7 +53,7 @@ class NetworkService {
         let baseUrl = "https://api.vk.com"
         let path = "/method/friends.get"
         let params: Parameters = [
-            "access_token": session.shared.token,
+            "access_token": Session.shared.token,
             "fields":["nickname","photo_100"],
             "v": "5.8"
         ]
@@ -81,7 +81,7 @@ class NetworkService {
         let path = "/method/photos.getAll"
         
         let params: Parameters = [
-            "access_token": session.shared.token,
+            "access_token": Session.shared.token,
             "no_service_albums": "1",
             "v": "5.77"
         ]

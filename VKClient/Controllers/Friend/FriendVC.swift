@@ -10,7 +10,7 @@ import UIKit
 
 class FriendVC: UICollectionViewController {
     
-    var friend: friend?
+    var friend: Friend?
    
 
     override func viewDidLoad() {

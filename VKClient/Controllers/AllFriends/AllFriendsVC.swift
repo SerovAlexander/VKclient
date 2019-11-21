@@ -11,7 +11,7 @@ import UIKit
 class AllFriendsVC: UITableViewController {
 
     var firstCharactes = [Character]()
-    var sortedFriends: [Character: [friend]] = [:]
+    var sortedFriends: [Character: [Friend]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +67,10 @@ class AllFriendsVC: UITableViewController {
         return String(character)
     }
  
-    private func sortFriendsByCharacters(_ friends:[friend]) -> (characters: [Character], sortedFriends: [Character: [friend]]) {
+    private func sortFriendsByCharacters(_ friends:[Friend]) -> (characters: [Character], sortedFriends: [Character: [Friend]]) {
         
         var characters = [Character]()
-        var sortedFriends = [Character: [friend]]()
+        var sortedFriends = [Character: [Friend]]()
         
         
         friends.forEach { friend in

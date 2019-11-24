@@ -18,14 +18,14 @@ class newAllFriendsVCTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
         let realm = try! Realm()
         let users = realm.objects(User.self)
         self.token = users.observe { change in
             switch change {
                 case .initial(let result):
                     self.tableView.reloadData()
-//                    print(result)
+                    print(result)
                 case let .update(results, indexesDelete, indexesInsert, Indexesmodifications):
                     self.tableView.beginUpdates()
                         self.tableView.insertRows(at: indexesInsert.map{IndexPath(row: $0, section: 0)}, with: .none)
@@ -46,7 +46,7 @@ class newAllFriendsVCTableViewController: UITableViewController {
             switch result {
             case .success(let users):
                 DataBase.save(items: users)
-                self.users = users
+//                self.users = users
 //                self.tableView.reloadData()
             case .failure(let error):
                 fatalError(error.localizedDescription)

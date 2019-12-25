@@ -17,6 +17,8 @@ class NewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NetworkService.getNews(token: Session.shared.token)
+        
       newsTableView.register(UINib(nibName: "NewsXIBCell", bundle: nil), forCellReuseIdentifier: "NewsXIBCell")
     self.newsTableView.dataSource = self
     }

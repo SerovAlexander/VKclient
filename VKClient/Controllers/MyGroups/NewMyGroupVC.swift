@@ -32,9 +32,9 @@ class NewMyGroupVC: UITableViewController {
                     self.tableView.deleteRows(at: indexesDelete.map{IndexPath(row: $0, section: 0)}, with: .none)
                     self.tableView.reloadRows(at: Indexesmodifications.map{IndexPath(row: $0, section: 0)}, with: .none)
                 self.tableView.endUpdates()
-            print(indexesDelete)
-            print(indexesInsert)
-            print(Indexesmodifications)
+//            print(indexesDelete)
+//            print(indexesInsert)
+//            print(Indexesmodifications)
             case .error:
                 print("error")
                         }

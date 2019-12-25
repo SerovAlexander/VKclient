@@ -92,6 +92,28 @@ class NetworkService {
          }
     }
     
-}
-   
+    // Функция для получения новостей пользователя
 
+    static func getNews(token: String) {
+         let baseUrl = "https://api.vk.com"
+         let path = "/method/newsfeed.get"
+         let params: Parameters = [
+             "access_token": Session.shared.token,
+             "filters": "post",
+             "max_photos": "1",
+             "count": "10",
+             "v": "5.103"
+         ]
+         
+         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON {response in
+            
+            guard let json = response.value else {return}
+            
+            print(json)
+             
+        }
+         
+    }
+
+}
+ 

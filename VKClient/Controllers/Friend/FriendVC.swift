@@ -41,7 +41,6 @@ class FriendVC: UICollectionViewController {
        cell.friendAvatar.image = friend?.friendAvatar
         return cell
     
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath) as! FriendCell
        
     }
 

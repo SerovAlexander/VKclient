@@ -12,7 +12,6 @@ import RealmSwift
 class NewMyGroupVC: UITableViewController {
     
     
-//    var newGroup = [Items]()
     var token: NotificationToken?
 
     private lazy var newGroup = try? Realm().objects(Items.self)
@@ -46,9 +45,7 @@ class NewMyGroupVC: UITableViewController {
            guard let self = self else { return }
            switch result {
            case .success(let groups):
-//               self.newGroup = groups
             DataBase.save(items: groups)
-               self.tableView.reloadData()
            case .failure(let error):
                fatalError(error.localizedDescription)
            }

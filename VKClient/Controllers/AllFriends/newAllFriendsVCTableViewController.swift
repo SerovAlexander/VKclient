@@ -11,7 +11,7 @@ import RealmSwift
 
 class newAllFriendsVCTableViewController: UITableViewController {
 
-//    var users = [User]()
+
     var token: NotificationToken?
 
     private lazy var users = try? Realm().objects(User.self).sorted(byKeyPath: "id")
@@ -32,9 +32,6 @@ class newAllFriendsVCTableViewController: UITableViewController {
                         self.tableView.deleteRows(at: indexesDelete.map{IndexPath(row: $0, section: 0)}, with: .none)
                         self.tableView.reloadRows(at: Indexesmodifications.map{IndexPath(row: $0, section: 0)}, with: .none)
                     self.tableView.endUpdates()
-                print(indexesDelete)
-                print(indexesInsert)
-                print(Indexesmodifications)
                 case .error:
                     print("error")
                            }
@@ -46,8 +43,6 @@ class newAllFriendsVCTableViewController: UITableViewController {
             switch result {
             case .success(let users):
                 DataBase.save(items: users)
-//                self.users = users
-//                self.tableView.reloadData()
             case .failure(let error):
                 fatalError(error.localizedDescription)
             }
@@ -57,14 +52,12 @@ class newAllFriendsVCTableViewController: UITableViewController {
 
        // MARK: - Table view data source
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         // #warning Incomplete implementation, return the number of rows
-//        return users.count
+
        return users?.count ?? 0
      }
      
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "AllFriendCell", for: indexPath) as! AllFriendCell
-//        let user = users[indexPath.row]
         guard let user = users?[indexPath.row] else {return cell}
          cell.configure(with: user)
 

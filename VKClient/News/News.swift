@@ -8,6 +8,40 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+
+
+
+
+
+
+
+
+//class News: Codable{
+//    let response: NewsResponse
+//}
+//
+//class NewsResponse: Codable {
+//    let items: NewsItems
+//}
+//
+//class NewsItems: Object, Codable {
+//    @objc dynamic var text: String = ""
+//    @objc dynamic var source_id: Int = 0
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct news {
     let avatarImage: UIImage?
@@ -20,3 +54,5 @@ struct news {
 let news1 = news(avatarImage: UIImage(named: "semak"), nameLabel: "Сергей Семак", dataLabel: "04.09.2019", textField: "Изучаю Xcode, пока тяжеловато! Но очень надеюсь, что в скором будущем, буду разбираться лучше!", image: UIImage(named: "xcode"))
 
 let news2 = news(avatarImage: UIImage(named: "Dzuba"), nameLabel: "Артем Дзюба", dataLabel: "03.09.2019", textField: "Какая красивая девушка!", image: UIImage(named: "Girls"))
+
+

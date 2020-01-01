@@ -101,6 +101,7 @@ class NetworkService {
              "access_token": Session.shared.token,
              "filters": "post",
              "max_photos": "1",
+             "source_ids": "friends",
              "count": "10",
              "v": "5.103"
          ]

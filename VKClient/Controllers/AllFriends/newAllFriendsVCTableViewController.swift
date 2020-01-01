@@ -59,7 +59,7 @@ class newAllFriendsVCTableViewController: UITableViewController {
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "AllFriendCell", for: indexPath) as! AllFriendCell
         guard let user = users?[indexPath.row] else {return cell}
-         cell.configure(with: user)
+        cell.configure(with: user)
 
          return cell
      }

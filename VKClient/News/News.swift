@@ -9,31 +9,25 @@
 import Foundation
 import UIKit
 import RealmSwift
+import SwiftyJSON
 
-
-
-
-
-
-
-
-//class News: Codable{
-//    let response: NewsResponse
-//}
-//
-//class NewsResponse: Codable {
-//    let items: NewsItems
-//}
-//
-//class NewsItems: Object, Codable {
-//    @objc dynamic var text: String = ""
-//    @objc dynamic var source_id: Int = 0
-//}
-
-
-
-
-
+class News: Object {
+    @objc dynamic var sourceId: Int = 0
+    @objc dynamic var newsText: String = ""
+    @objc dynamic var date: Double = 0
+    
+    
+    convenience init(_ json: JSON) {
+        self.init()
+        
+        self.sourceId = json["sourse_id"].intValue
+        self.newsText = json["text"].stringValue
+        self.date = json["date"].doubleValue
+    }
+    override static func primaryKey() -> String? {
+        "sourceId"
+    }
+}
 
 
 
@@ -43,7 +37,11 @@ import RealmSwift
 
 
 
-struct news {
+
+
+
+
+struct oldNews {
     let avatarImage: UIImage?
     let nameLabel: String
     let dataLabel: String
@@ -51,8 +49,8 @@ struct news {
     let image: UIImage?
 }
 
-let news1 = news(avatarImage: UIImage(named: "semak"), nameLabel: "Сергей Семак", dataLabel: "04.09.2019", textField: "Изучаю Xcode, пока тяжеловато! Но очень надеюсь, что в скором будущем, буду разбираться лучше!", image: UIImage(named: "xcode"))
+let news1 = oldNews(avatarImage: UIImage(named: "semak"), nameLabel: "Сергей Семак", dataLabel: "04.09.2019", textField: "Изучаю Xcode, пока тяжеловато! Но очень надеюсь, что в скором будущем, буду разбираться лучше!", image: UIImage(named: "xcode"))
 
-let news2 = news(avatarImage: UIImage(named: "Dzuba"), nameLabel: "Артем Дзюба", dataLabel: "03.09.2019", textField: "Какая красивая девушка!", image: UIImage(named: "Girls"))
+let news2 = oldNews(avatarImage: UIImage(named: "Dzuba"), nameLabel: "Артем Дзюба", dataLabel: "03.09.2019", textField: "Какая красивая девушка!", image: UIImage(named: "Girls"))
 
 

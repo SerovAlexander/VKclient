@@ -60,12 +60,9 @@ class NewsXIBCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setupWithNews(_ news: news) {
-        avatarImage.image = news.avatarImage
-        nameLAbel.text = news.nameLabel
-        dataLabel.text = news.dataLabel
-        ImageView.image = news.image
-        textField.text = news.textField
+    public func configure(with news: News) {
+        
+        textField.text = news.newsText
     }
     
    

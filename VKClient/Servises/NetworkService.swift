@@ -94,23 +94,30 @@ class NetworkService {
     
     // Функция для получения новостей пользователя
 
-    static func getNews(token: String) {
+    static func getNews(comletion: @escaping (Result<[News]>) -> Void) {
          let baseUrl = "https://api.vk.com"
          let path = "/method/newsfeed.get"
          let params: Parameters = [
              "access_token": Session.shared.token,
              "filters": "post",
-             "max_photos": "1",
+             "max_photos": "10",
              "source_ids": "friends",
-             "count": "10",
              "v": "5.103"
          ]
          
          NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON {response in
-            
-            guard let json = response.value else {return}
-            
-            print(json)
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let newJSON = json["response"]["items"].arrayValue
+                let news = newJSON.map { News($0) }
+                comletion(.success(news))
+            case .failure(let error):
+                comletion(.failure(error))
+            }
+//            guard let json = response.value else {return}
+//
+//            print(json)
              
         }
          

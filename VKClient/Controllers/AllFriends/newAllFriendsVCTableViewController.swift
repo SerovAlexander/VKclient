@@ -25,7 +25,6 @@ class newAllFriendsVCTableViewController: UITableViewController {
             switch change {
                 case .initial(let result):
                     self.tableView.reloadData()
-//                    print(result)
                 case let .update(results, indexesDelete, indexesInsert, Indexesmodifications):
                     self.tableView.beginUpdates()
                         self.tableView.insertRows(at: indexesInsert.map{IndexPath(row: $0, section: 0)}, with: .none)

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import Kingfisher
 
 class NewsXIBCell: UITableViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
@@ -60,13 +62,37 @@ class NewsXIBCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    public func configure(with news: News) {
+    public func configure(with news: News?) {
         
-        textField.text = news.newsText
-    }
-    
-   
+        guard var sourceId = news?.sourceId else {return}
+                var postAutor: String = ""
+                var avatarURL: String = ""
+                guard sourceId != 0 else {return}
+                if sourceId > 0 {
+                    guard let news = news,
+                        let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
+                        let user = sourceDB.first
+                    else {return}
+                    
+                    postAutor = user.firstName + " " + user.secondName
+                    avatarURL = user.avatar
+
+                } else {
         
-    
-}
+                    sourceId = -sourceId
+                    guard let news = news,
+                        let sourceDB = try? Realm().objects(Items.self).filter("id == %@", sourceId),
+                        let group = sourceDB.first
+                        else {return}
+                    
+                    postAutor = group.name
+                    avatarURL = group.photo_100
+                }
+                    avatarImage.kf.setImage(with: URL(string: avatarURL))
+                    nameLAbel.text = postAutor
+                    textField.text = news?.newsText
+        
+                }
+      
+        }
 

@@ -15,17 +15,18 @@ class News: Object {
     @objc dynamic var sourceId: Int = 0
     @objc dynamic var newsText: String = ""
     @objc dynamic var date: Double = 0
-    
+    @objc dynamic var post_id: Int = 0
     
     convenience init(_ json: JSON) {
         self.init()
         
-        self.sourceId = json["sourse_id"].intValue
+        self.sourceId = json["source_id"].intValue
         self.newsText = json["text"].stringValue
         self.date = json["date"].doubleValue
+        self.post_id = json["post_id"].intValue
     }
     override static func primaryKey() -> String? {
-        "sourceId"
+        "post_id"
     }
 }
 

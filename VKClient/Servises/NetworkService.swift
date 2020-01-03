@@ -99,9 +99,9 @@ class NetworkService {
          let path = "/method/newsfeed.get"
          let params: Parameters = [
              "access_token": Session.shared.token,
-             "filters": "post",
              "max_photos": "10",
              "source_ids": "friends",
+             "count":"10",
              "v": "5.103"
          ]
          
@@ -109,16 +109,14 @@ class NetworkService {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                print(json)
                 let newJSON = json["response"]["items"].arrayValue
                 let news = newJSON.map { News($0) }
                 comletion(.success(news))
             case .failure(let error):
                 comletion(.failure(error))
             }
-//            guard let json = response.value else {return}
-//
-//            print(json)
-             
+           
         }
          
     }

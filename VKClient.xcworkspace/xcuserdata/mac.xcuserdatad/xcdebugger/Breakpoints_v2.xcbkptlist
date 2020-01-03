@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A5D9FCC6-281C-451D-B9B8-CB4B734F10A7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKClient/Servises/DataBase.swift"
@@ -142,8 +142,8 @@
             filePath = "VKClient/Servises/NetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "getNews(comletion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,10 +158,42 @@
             filePath = "VKClient/Servises/NetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "getNews(comletion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "56E0CC71-39CC-42B3-A797-B5A36D86435D - f003a6a85a41d707"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static VKClient.NetworkService.getNews(comletion: (Alamofire.Result&lt;Swift.Array&lt;VKClient.News&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Servises/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "757">
+               </Location>
+               <Location
+                  uuid = "56E0CC71-39CC-42B3-A797-B5A36D86435D - 1ef6a3ae292e3c7c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; VKClient.News in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static VKClient.NetworkService.getNews(comletion: (Alamofire.Result&lt;Swift.Array&lt;VKClient.News&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Servises/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

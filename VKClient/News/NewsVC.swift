@@ -12,11 +12,28 @@ import RealmSwift
 class NewsVC: UIViewController {
     
     @IBOutlet weak var newsTableView: UITableView!
+    var token: NotificationToken?
+    private lazy var news =  try? Realm().objects(News.self)
     
-    private lazy var news =  try? Realm().objects(News.self
-    )
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
+        let news = realm.objects(News.self)
+        self.token = news.observe { change in
+                    switch change {
+                        case .initial(let result):
+                            self.newsTableView.reloadData()
+                        case let .update(results, indexesDelete, indexesInsert, Indexesmodifications):
+                            self.newsTableView.beginUpdates()
+                                self.newsTableView.insertRows(at: indexesInsert.map{IndexPath(row: $0, section: 0)}, with: .none)
+                                self.newsTableView.deleteRows(at: indexesDelete.map{IndexPath(row: $0, section: 0)}, with: .none)
+                                self.newsTableView.reloadRows(at: Indexesmodifications.map{IndexPath(row: $0, section: 0)}, with: .none)
+                            self.newsTableView.endUpdates()
+                        case .error:
+                            print("error")
+                                   }
+                       
+                           }
         
         NetworkService.getNews{[weak self] result in
             guard let self = self else { return }
@@ -29,7 +46,6 @@ class NewsVC: UIViewController {
         }
             
         }
-        
       newsTableView.register(UINib(nibName: "NewsXIBCell", bundle: nil), forCellReuseIdentifier: "NewsXIBCell")
     self.newsTableView.dataSource = self
     }
@@ -42,9 +58,9 @@ extension NewsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsXIBCell" ) as! NewsXIBCell
-        guard let new = news?[indexPath.row] else {return cell}
-        cell.textField.text = new.newsText
-        cell.dataLabel.text = String(new.date)
+        guard let news = news?[indexPath.row] else {return cell}
+        
+        cell.configure(with: news)
 
         return cell
     }

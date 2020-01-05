@@ -1,11 +1,11 @@
+////
+////  NewsVC.swift
+////  VKClient
+////
+////  Created by Aleksandr Serov on 03/09/2019.
+////  Copyright © 2019 mac. All rights reserved.
+////
 //
-//  NewsVC.swift
-//  VKClient
-//
-//  Created by Aleksandr Serov on 03/09/2019.
-//  Copyright © 2019 mac. All rights reserved.
-//
-
 import UIKit
 import RealmSwift
 
@@ -17,6 +17,7 @@ class NewsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
         let realm = try! Realm()
         let news = realm.objects(News.self)
         self.token = news.observe { change in
@@ -34,6 +35,7 @@ class NewsVC: UIViewController {
                                    }
                        
                            }
+        }
         
         NetworkService.getNews{[weak self] result in
             guard let self = self else { return }

@@ -17,7 +17,7 @@ class NewsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+         
         let realm = try! Realm()
         let news = realm.objects(News.self)
         self.token = news.observe { change in
@@ -33,9 +33,9 @@ class NewsVC: UIViewController {
                         case .error:
                             print("error")
                                    }
-                       
+
                            }
-        }
+
         
         NetworkService.getNews{[weak self] result in
             guard let self = self else { return }

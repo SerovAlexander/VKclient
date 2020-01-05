@@ -32,7 +32,7 @@ var friends: [Friend] = [Stive, David, Dzuba, Tim, Semak, Kokorin, Zhirkov, Kuza
 
 class User: Object {
     
-    @objc dynamic var id: String = ""
+    @objc dynamic var id: Int = 0
     @objc dynamic var firstName: String = ""
     @objc dynamic var secondName: String = ""
     @objc dynamic var avatar: String = ""
@@ -42,7 +42,7 @@ class User: Object {
      convenience init(_ json: JSON) {
         self.init()
         
-        self.id = json["id"].stringValue
+        self.id = json["id"].intValue
         self.firstName = json["first_name"].stringValue
         self.secondName = json["last_name"].stringValue
         self.avatar = json["photo_100"].stringValue

@@ -24,20 +24,25 @@ class NewsXIBCell: UITableViewCell {
     @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
     
+    private let dateFormater: DateFormatter = {
+        let dF = DateFormatter()
+        dF.dateFormat = "HH:mm dd-MM-yyyy"
+        return dF
+    }()
     
     
     var likesCount: Int = 0
     
     @IBAction func likeButtonTap(_ sender: Any) {
-        if likesCount == 0 {
-            likesCount += 1
-            likeButton.setImage(UIImage(named: "FullHeart"), for: .normal)
-            likeCountLabel.text = String(likesCount)
-        } else {
-            likesCount -= 1
-            likeButton.setImage(UIImage(named: "EmptyHeart"), for: .normal)
-            likeCountLabel.text = String(likesCount)
-        }
+//        if likesCount == 0 {
+//            likesCount += 1
+//            likeButton.setImage(UIImage(named: "FullHeart"), for: .normal)
+//            likeCountLabel.text = String(likesCount)
+//        } else {
+//            likesCount -= 1
+//            likeButton.setImage(UIImage(named: "EmptyHeart"), for: .normal)
+//            likeCountLabel.text = String(likesCount)
+//        }
     }
 
     @IBAction func commentButtonTap(_ sender: Any){
@@ -67,27 +72,47 @@ class NewsXIBCell: UITableViewCell {
         guard var sourceId = news?.sourceId else {return}
                 var postAutor: String = ""
                 var avatarURL: String = ""
+                var postDate: Date = Date.distantPast
+                var postImageUrl: String = ""
                 guard sourceId != 0 else {return}
                 if sourceId > 0 {
-                    guard let news = news,
-                        let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
+                    if news == nil {
+                        return
+                    }
+                    guard let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
                         let user = sourceDB.first
                     else {return}
                     postAutor = user.firstName + " " + user.secondName
                     avatarURL = user.avatar
+                    postDate = Date(timeIntervalSince1970: news?.date ?? 0)
+                    postImageUrl = news?.postPhoto ?? ""
+                    
                 } else {
                     sourceId = -sourceId
-                    guard let news = news,
-                        let sourceDB = try? Realm().objects(Items.self).filter("id == %@", sourceId),
+                    if news == nil {
+                        return
+                    }
+                    guard let sourceDB = try? Realm().objects(Items.self).filter("id == %@", sourceId),
                         let group = sourceDB.first
                         else {return}
                     postAutor = group.name
                     avatarURL = group.photo_100
+                    postDate = Date(timeIntervalSince1970: news?.date ?? 0)
+                    postImageUrl = news?.postPhoto ?? ""
                 }
                     avatarImage.kf.setImage(with: URL(string: avatarURL))
                     nameLAbel.text = postAutor
                     textField.text = news?.newsText
+                    dataLabel.text = dateFormater.string(from: postDate)
+                    imageView?.kf.setImage(with: URL(string: postImageUrl))
+                    likeCountLabel.text = String(news?.likesCount ?? 0 )
+                    commentCountLabel.text = String(news?.commentsCount ?? 0)
         
+        if news?.userLike == 1{
+            likeButton.setImage(UIImage(named: "FullHeart"), for: .normal)
+            
+        }
+                    
                 }
       
         }

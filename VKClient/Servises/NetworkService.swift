@@ -100,8 +100,7 @@ class NetworkService {
          let params: Parameters = [
              "access_token": Session.shared.token,
              "max_photos": "10",
-             "source_ids": "friends",
-             "count":"10",
+             "count":"1",
              "v": "5.103"
          ]
          

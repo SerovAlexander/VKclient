@@ -11,7 +11,7 @@ import UIKit
 import RealmSwift
 import SwiftyJSON
 
-class News {
+class News: Object {
     @objc dynamic var sourceId: Int = 0
     @objc dynamic var newsText: String = ""
     @objc dynamic var date: Double = 0
@@ -34,9 +34,9 @@ class News {
         self.likesCount = json["likes"]["count"].intValue
         self.userLike = json["likes"]["user_likes"].intValue
     }
-//    override static func primaryKey() -> String? {
-//        "post_id"
-//    }
+    override static func primaryKey() -> String? {
+        "post_id"
+    }
 }
 
 

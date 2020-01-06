@@ -108,9 +108,9 @@ class NetworkService {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                print(json)
                 let newJSON = json["response"]["items"].arrayValue
                 let news = newJSON.map {News($0)}
-                print(news[0].likesCount)
                 comletion(.success(news))
             case .failure(let error):
                 comletion(.failure(error))

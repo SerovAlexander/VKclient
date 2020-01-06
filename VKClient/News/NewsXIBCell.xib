@@ -124,6 +124,7 @@
                 <outlet property="commentCountLabel" destination="KD2-wU-le0" id="8Av-dN-Vae"/>
                 <outlet property="dataLabel" destination="eHr-3p-lxn" id="VTS-go-imN"/>
                 <outlet property="likeButton" destination="WfD-sX-d3f" id="NLE-59-PqN"/>
+                <outlet property="likeCountLabel" destination="KAJ-Pt-LMz" id="53z-78-qCF"/>
                 <outlet property="nameLAbel" destination="oWL-9j-ls8" id="Yee-0H-Dv9"/>
                 <outlet property="shareButton" destination="DzI-zP-Di3" id="AbN-JC-gD3"/>
                 <outlet property="textField" destination="Hnc-vn-SvS" id="xLK-LR-khj"/>

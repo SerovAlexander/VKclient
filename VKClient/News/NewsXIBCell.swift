@@ -15,7 +15,7 @@ class NewsXIBCell: UITableViewCell {
     @IBOutlet weak var nameLAbel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var textField: UITextField!
+//    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeCountLabel: UILabel!
     
@@ -23,6 +23,8 @@ class NewsXIBCell: UITableViewCell {
     
     @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+  
+    @IBOutlet weak var newsTextLabel: UILabel!
     
     private let dateFormater: DateFormatter = {
         let dF = DateFormatter()
@@ -34,6 +36,8 @@ class NewsXIBCell: UITableViewCell {
     var likesCount: Int = 0
     
     @IBAction func likeButtonTap(_ sender: Any) {
+    
+        
 //        if likesCount == 0 {
 //            likesCount += 1
 //            likeButton.setImage(UIImage(named: "FullHeart"), for: .normal)
@@ -102,9 +106,9 @@ class NewsXIBCell: UITableViewCell {
                 }
                     avatarImage.kf.setImage(with: URL(string: avatarURL))
                     nameLAbel.text = postAutor
-                    textField.text = news?.newsText
+                    newsTextLabel.text = news?.newsText
                     dataLabel.text = dateFormater.string(from: postDate)
-                    imageView?.kf.setImage(with: URL(string: postImageUrl))
+//                    imageView?.kf.setImage(with: URL(string: postImageUrl))
                     likeCountLabel.text = String(news?.likesCount ?? 0 )
                     commentCountLabel.text = String(news?.commentsCount ?? 0)
         

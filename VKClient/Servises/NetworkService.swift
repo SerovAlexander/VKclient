@@ -99,8 +99,9 @@ class NetworkService {
          let path = "/method/newsfeed.get"
          let params: Parameters = [
              "access_token": Session.shared.token,
+             "filters":"Post",
              "max_photos": "10",
-             "count":"1",
+             "count":"20",
              "v": "5.103"
          ]
          

@@ -10,20 +10,20 @@ import Foundation
 import RealmSwift
 
 class DataBase {
-// Функция для сохранения списка друзей из ВК в базу данных Realm
+    // Функция для сохранения списка друзей из ВК в базу данных Realm
     static func save<T: Object>(items: [T]) {
         
-    let realm = try! Realm()
+        let realm = try! Realm()
         print(realm.configuration.fileURL)
-    try? realm.write {
-        realm.add(items, update: .all)
-    
+        try? realm.write {
+            realm.add(items, update: .all)
+            
         }
     }
-// Функция для очистки базы данных
+    // Функция для очистки базы данных
     static func clearDataBase() {
         
-       let realm = try! Realm()
+        let realm = try! Realm()
         
         try? realm.write {
             realm.deleteAll()

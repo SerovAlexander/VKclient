@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class AllFriendCell: UITableViewCell {
-
+    
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var avatarShadowView: AvatarShadowView!
     
@@ -19,10 +19,10 @@ class AllFriendCell: UITableViewCell {
         
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     public func configure(with user: User) {

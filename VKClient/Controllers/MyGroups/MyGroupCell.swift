@@ -15,10 +15,14 @@ class MyGroupCell: UITableViewCell {
     @IBOutlet weak var GroupImage: UIImageView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+       super.awakeFromNib()
+        GroupImage.layer.masksToBounds = true
     }
-
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        GroupImage.layer.cornerRadius  = 45
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

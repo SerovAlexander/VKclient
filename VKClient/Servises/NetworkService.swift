@@ -18,15 +18,15 @@ class NetworkService {
         return session
     }()
     
-// Функция для получения групп пользователя
+    // Функция для получения групп пользователя
     static func getGroup(comletion: @escaping (Result<[Items]>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/groups.get"
         
         let params: Parameters = [
-          "access_token":Session.shared.token,
-          "extended": 1,
-          "v": "5.92"
+            "access_token":Session.shared.token,
+            "extended": 1,
+            "v": "5.92"
         ]
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseData {response in
@@ -47,7 +47,7 @@ class NetworkService {
         }
     }
     
-// Функция для получения списка друзей пользователя
+    // Функция для получения списка друзей пользователя
     static func loadFriends(completion: @escaping (Result<[User]>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/friends.get"
@@ -70,10 +70,10 @@ class NetworkService {
             
         }
         
-     
+        
     }
     
-// Функция для получения фотографий пользователя
+    // Функция для получения фотографий пользователя
     
     static func getPhotos(token: String) {
         let baseUrl = "https://api.vk.com"
@@ -89,23 +89,23 @@ class NetworkService {
             guard let json = response.value else {return}
             
             print(json)
-         }
+        }
     }
     
     // Функция для получения новостей пользователя
-
+    
     static func getNews(comletion: @escaping (Result<[News]>) -> Void) {
-         let baseUrl = "https://api.vk.com"
-         let path = "/method/newsfeed.get"
-         let params: Parameters = [
-             "access_token": Session.shared.token,
-             "filters":"Post",
-             "max_photos": "10",
-             "count":"20",
-             "v": "5.103"
-         ]
-         
-         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON {response in
+        let baseUrl = "https://api.vk.com"
+        let path = "/method/newsfeed.get"
+        let params: Parameters = [
+            "access_token": Session.shared.token,
+            "filters":"Post",
+            "max_photos": "10",
+            "count":"20",
+            "v": "5.103"
+        ]
+        
+        NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON {response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -116,10 +116,10 @@ class NetworkService {
             case .failure(let error):
                 comletion(.failure(error))
             }
-           
+            
         }
-         
+        
     }
-
+    
 }
- 
+

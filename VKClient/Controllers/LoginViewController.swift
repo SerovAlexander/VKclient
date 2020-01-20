@@ -10,15 +10,15 @@ import UIKit
 import WebKit
 
 class LoginViewController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var webView: WKWebView!{
         didSet {
             webView.navigationDelegate = self
         }
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,13 +46,13 @@ class LoginViewController: UIViewController {
 // Тут особо не понятно
 
 extension LoginViewController: WKNavigationDelegate {
-   
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         guard let url = navigationResponse.response.url, url.path == "/blank.html",
             let fragment = url.fragment else {
                 decisionHandler(.allow)
                 return }
-
+        
         let params = fragment
             .components(separatedBy: "&")
             .map { $0.components(separatedBy: "=") }
@@ -63,23 +63,23 @@ extension LoginViewController: WKNavigationDelegate {
                 dict[key] = value
                 return dict
         }
-
+        
         let token = params["access_token"]
         
-// Лучше переделать через проверку, получени ли токен или нет!
+        // Лучше переделать через проверку, получени ли токен или нет!
         
         Session.shared.token = (token ?? "token is empty")!
         
         print(Session.shared.token)
-
+        
         
         
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: " UITabBarController") as! UIViewController
         self.present(viewController, animated: true)
-
-                decisionHandler(.cancel)
-        }
+        
+        decisionHandler(.cancel)
+    }
     
 }
 

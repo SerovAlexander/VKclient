@@ -9,56 +9,56 @@
 import UIKit
 
 class AllFriendsVC: UITableViewController {
-
+    
     var firstCharactes = [Character]()
     var sortedFriends: [Character: [Friend]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         (firstCharactes, sortedFriends) = sortFriendsByCharacters(friends)
-
+        (firstCharactes, sortedFriends) = sortFriendsByCharacters(friends)
+        
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return firstCharactes.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+        
         let character = firstCharactes[section]
         let friendsCount = sortedFriends[character]?.count
         return friendsCount ?? 0
-
+        
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllFriendCell") as! AllFriendCell
         
         let character = firstCharactes[indexPath.section]
-
+        
         if let friends = sortedFriends[character] {
-
-        let friend = friends[indexPath.row]
-        cell.friendName.text = friend.friendName
-        cell.avatarShadowView.friendAvatar.image = friend.friendAvatar
+            
+            let friend = friends[indexPath.row]
+            cell.friendName.text = friend.friendName
+            cell.avatarShadowView.friendAvatar.image = friend.friendAvatar
             
         }
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let character = firstCharactes[indexPath.section]
         
         if let friends = sortedFriends[character] {
-        let friend = friends[indexPath.row]
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"FriendVC") as! FriendVC
-        vc.friend = friend
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+            let friend = friends[indexPath.row]
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"FriendVC") as! FriendVC
+            vc.friend = friend
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -66,7 +66,7 @@ class AllFriendsVC: UITableViewController {
         let character = firstCharactes[section]
         return String(character)
     }
- 
+    
     private func sortFriendsByCharacters(_ friends:[Friend]) -> (characters: [Character], sortedFriends: [Character: [Friend]]) {
         
         var characters = [Character]()

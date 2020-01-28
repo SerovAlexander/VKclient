@@ -37,8 +37,8 @@ class AllGroupVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell") as! MyGroupCell
 
         let group = Groups[indexPath.row]
-        cell.GroupName.text = group.nameGroup
-        cell.GroupImage.image = group.imageGroup
+        cell.groupName.text = group.nameGroup
+        cell.groupImage.image = group.imageGroup
         return cell
     }
 

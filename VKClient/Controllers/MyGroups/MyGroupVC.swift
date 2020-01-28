@@ -42,8 +42,8 @@ class MyGroupVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell") as! MyGroupCell
         
         let group = userGroups[indexPath.row]
-        cell.GroupName.text = group.nameGroup
-        cell.GroupImage.image = group.imageGroup
+        cell.groupName.text = group.nameGroup
+        cell.groupImage.image = group.imageGroup
         
         return cell
     }

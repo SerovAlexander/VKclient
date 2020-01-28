@@ -18,7 +18,6 @@ class NewMyGroupVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             let realm = try! Realm()
             let newGroup = realm.objects(Items.self)
             self.token = newGroup.observe { change in
@@ -35,15 +34,16 @@ class NewMyGroupVC: UITableViewController {
                     print("error")
                 }
             }
-        }
         
-        NetworkService.getGroup { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let groups):
-                DataBase.save(items: groups)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
+        DispatchQueue.global().async {
+            NetworkService.getGroup { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let groups):
+                    DataBase.save(items: groups)
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
             }
         }
     }

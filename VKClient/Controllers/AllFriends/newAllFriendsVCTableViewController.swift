@@ -11,14 +11,12 @@ import RealmSwift
 
 class newAllFriendsVCTableViewController: UITableViewController {
     
-    
     var token: NotificationToken?
     
     private lazy var users = try? Realm().objects(User.self).sorted(byKeyPath: "id")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             let realm = try! Realm()
             let users = realm.objects(User.self)
             self.token = users.observe { change in
@@ -36,17 +34,18 @@ class newAllFriendsVCTableViewController: UITableViewController {
                 }
                 
             }
-//        }
-        NetworkService.loadFriends { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let users):
-                DataBase.save(items: users)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
+
+        DispatchQueue.global().async {
+            NetworkService.loadFriends { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let users):
+                    DataBase.save(items: users)
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
             }
         }
-        
     }
     
     // MARK: - Table view data source

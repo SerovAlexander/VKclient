@@ -18,7 +18,10 @@ class NewsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+// Регистрирую XIB ячейку
+        newsTableView.register(UINib(nibName: "NewsXIBCell", bundle: nil), forCellReuseIdentifier: "NewsXIBCell")
+        self.newsTableView.dataSource = self
+
         let realm = try! Realm()
         let news = realm.objects(News.self)
         self.token = news.observe { change in
@@ -38,21 +41,18 @@ class NewsVC: UIViewController {
             }
             
         }
-        
-        
-        NetworkService.getNews{[weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let news):
-                DataBase.save(items: news)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
-                
+// Делаю запрос на получение новостей асинхронно в глобальной очереди
+        DispatchQueue.global().async {
+            NetworkService.getNews{[weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let news):
+                    DataBase.save(items: news)
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
             }
-            
         }
-        newsTableView.register(UINib(nibName: "NewsXIBCell", bundle: nil), forCellReuseIdentifier: "NewsXIBCell")
-        self.newsTableView.dataSource = self
     }
 }
 

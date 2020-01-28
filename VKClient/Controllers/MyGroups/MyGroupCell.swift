@@ -11,16 +11,16 @@ import Kingfisher
 
 class MyGroupCell: UITableViewCell {
 
-    @IBOutlet weak var GroupName: UILabel!
-    @IBOutlet weak var GroupImage: UIImageView!
+    @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var groupImage: UIImageView!
     
     override func awakeFromNib() {
        super.awakeFromNib()
-        GroupImage.layer.masksToBounds = true
+        groupImage.layer.masksToBounds = true
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        GroupImage.layer.cornerRadius  = 45
+        groupImage.layer.cornerRadius  = 45
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,9 +29,9 @@ class MyGroupCell: UITableViewCell {
         // Configure the view for the selected state
     }
     public func configure(with group: Items) {
-        GroupName.text = group.name
+        groupName.text = group.name
         let url = URL(string: group.photo_100)
-        GroupImage.kf.setImage(with: url)
+        groupImage.kf.setImage(with: url)
 
        }
 }

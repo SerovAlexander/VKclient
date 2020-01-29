@@ -30,20 +30,22 @@ class NetworkService {
         ]
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseData {response in
-            switch response.result {
-            case .success(let data):
-                let decoder = JSONDecoder()
-                do {
-                    let groups = try decoder.decode(Groupss.self, from: data)                  
-                    comletion(.success(groups.response.items))
-                } catch {
-                    print("\(error) Vot tut oshibka")
+            DispatchQueue.global().async {
+// Блок кода парсинга списка групп асинхронно на глобальной очереди
+                switch response.result {
+                case .success(let data):
+                    let decoder = JSONDecoder()
+                    do {
+                        let groups = try decoder.decode(Groupss.self, from: data)
+                        comletion(.success(groups.response.items))
+                    } catch {
+                        print("\(error) Vot tut oshibka")
+                    }
+                    
+                case .failure(let error):
+                    print("Tozhe Oshibka")
                 }
-                
-            case .failure(let error):
-                print("Tozhe Shlyapa")
             }
-            
         }
     }
     
@@ -58,19 +60,19 @@ class NetworkService {
         ]
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON {response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                let userJSONs = json["response"]["items"].arrayValue
-                let users = userJSONs.map { User($0) }
-                completion(.success(users))
-            case .failure(let error):
-                completion(.failure(error))
+// Блок кода парсинга списка друзей асинхронно на глобальной очереди
+            DispatchQueue.global().async {
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    let userJSONs = json["response"]["items"].arrayValue
+                    let users = userJSONs.map { User($0) }
+                    completion(.success(users))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-            
         }
-        
-        
     }
     
     // Функция для получения фотографий пользователя
@@ -92,7 +94,7 @@ class NetworkService {
         }
     }
     
-    // Функция для получения новостей пользователя
+// Функция для получения новостей пользователя
     
     static func getNews(comletion: @escaping (Result<[News]>) -> Void) {
         let baseUrl = "https://api.vk.com"
@@ -106,20 +108,20 @@ class NetworkService {
         ]
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON {response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print(json)
-                let newJSON = json["response"]["items"].arrayValue
-                let news = newJSON.map {News($0)}
-                comletion(.success(news))
-            case .failure(let error):
-                comletion(.failure(error))
+            // Блок кода парсинга новостей асинхронно на глобальной очереди
+            DispatchQueue.global().async {
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    let newJSON = json["response"]["items"].arrayValue
+                    let news = newJSON.map {News($0)}
+                    comletion(.success(news))
+                case .failure(let error):
+                    comletion(.failure(error))
+                }
             }
-            
         }
-        
     }
-    
 }
 

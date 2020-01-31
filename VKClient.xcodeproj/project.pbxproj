@@ -12,6 +12,7 @@
 		041D1935231E7E9400B48FB3 /* NewsXIBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D1933231E7E9400B48FB3 /* NewsXIBCell.swift */; };
 		041D1936231E7E9400B48FB3 /* NewsXIBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041D1934231E7E9400B48FB3 /* NewsXIBCell.xib */; };
 		041D1938231FBD2900B48FB3 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D1937231FBD2900B48FB3 /* News.swift */; };
+		0438E72423E1B6E5002EB1B4 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438E72323E1B6E5002EB1B4 /* PhotoService.swift */; };
 		044781B2233A8A4100CFED44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044781B1233A8A4100CFED44 /* LoginViewController.swift */; };
 		044781B4233A8D8600CFED44 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044781B3233A8D8600CFED44 /* WebKit.framework */; };
 		0456485E2385A2F800E303FC /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456485D2385A2F800E303FC /* DataBase.swift */; };
@@ -44,6 +45,7 @@
 		041D1933231E7E9400B48FB3 /* NewsXIBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsXIBCell.swift; sourceTree = "<group>"; };
 		041D1934231E7E9400B48FB3 /* NewsXIBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsXIBCell.xib; sourceTree = "<group>"; };
 		041D1937231FBD2900B48FB3 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = VKClient/News/News.swift; sourceTree = SOURCE_ROOT; };
+		0438E72323E1B6E5002EB1B4 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		044781B1233A8A4100CFED44 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		044781B3233A8D8600CFED44 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0456485D2385A2F800E303FC /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				04BE54DA233F8E2D00BB356B /* NetworkService.swift */,
 				0456485D2385A2F800E303FC /* DataBase.swift */,
+				0438E72323E1B6E5002EB1B4 /* PhotoService.swift */,
 			);
 			path = Servises;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				04138D41237040310050D35D /* NewMyGroupVC.swift in Sources */,
 				044781B2233A8A4100CFED44 /* LoginViewController.swift in Sources */,
 				046E37342317E95D00402C74 /* FriendXIBCell.swift in Sources */,
+				0438E72423E1B6E5002EB1B4 /* PhotoService.swift in Sources */,
 				045BFE3D23083BFF008CB552 /* AllGroupVC.swift in Sources */,
 				045BFE3923082D72008CB552 /* MyGroupVC.swift in Sources */,
 			);

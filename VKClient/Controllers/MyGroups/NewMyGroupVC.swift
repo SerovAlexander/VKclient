@@ -11,8 +11,9 @@ import RealmSwift
 
 class NewMyGroupVC: UITableViewController {
     
-    
-    var token: NotificationToken?
+
+    private var token: NotificationToken?
+    private var photoService: PhotoService?
     
     private lazy var newGroup = try? Realm().objects(Items.self)
     
@@ -58,8 +59,10 @@ class NewMyGroupVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell", for: indexPath) as! MyGroupCell
         guard let group = newGroup?[indexPath.row] else {return cell}
-        cell.configure(with: group)
-        
+//        cell.configure(with: group, by: photoService)
+        var urlString = group.photo_100
+        cell.groupName.text = group.name
+        cell.groupImage.image = photoService?.photo(atIndexpath: indexPath, urlString: urlString)
         return cell
     }
     

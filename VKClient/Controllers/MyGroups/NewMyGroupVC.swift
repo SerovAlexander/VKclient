@@ -59,7 +59,8 @@ class NewMyGroupVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell", for: indexPath) as! MyGroupCell
         guard let group = newGroup?[indexPath.row] else {return cell}
-//        cell.configure(with: group, by: photoService)
+//        cell.configure(with: group)
+        photoService = PhotoService(container: tableView)
         var urlString = group.photo_100
         cell.groupName.text = group.name
         cell.groupImage.image = photoService?.photo(atIndexpath: indexPath, urlString: urlString)

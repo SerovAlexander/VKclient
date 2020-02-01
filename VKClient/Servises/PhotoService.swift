@@ -77,7 +77,7 @@ class PhotoService {
             self.saveImageToFilesystemCash(urlString: urlString, image: image )
 //            completion(image)
             DispatchQueue.main.async { [weak self] in
-                self?.container.reloadRow(atIndexpath: indexPath)
+//                self?.container.reloadRow(atIndexpath: indexPath)
             }
         }
     }

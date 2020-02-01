@@ -28,15 +28,13 @@ class MyGroupCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-//    public func configure(with group: Items, by photoService: PhotoService) {
-//        groupName.text = group.name
-//        
-//        //        let url = URL(string: group.photo_100)
-//        //        groupImage.kf.setImage(with: url)
-//        let urlString = group.photo_100
-//      
-//        groupImage.image = photoService.photo(atIndexpath: in, urlString: <#T##String#>)
-//        }
-//    }
+    public func configure(with group: Items) {
+        groupName.text = group.name
+        
+                let url = URL(string: group.photo_100)
+                groupImage.kf.setImage(with: url)
+        
+        
+    }
 }
 

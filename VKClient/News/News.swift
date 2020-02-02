@@ -14,7 +14,7 @@ import SwiftyJSON
 class News: Object {
     @objc dynamic var sourceId: Int = 0
     @objc dynamic var newsText: String = ""
-    @objc dynamic var date: Double = 0
+    @objc dynamic var date: Date = Date.distantPast
     @objc dynamic var post_id: Int = 0
     @objc dynamic var postPhoto: String = ""
     
@@ -27,7 +27,8 @@ class News: Object {
         
         self.sourceId = json["source_id"].intValue
         self.newsText = json["text"].stringValue
-        self.date = json["date"].doubleValue
+        let date = json["date"].doubleValue
+        self.date = Date(timeIntervalSince1970: date)
         self.post_id = json["post_id"].intValue
         self.postPhoto = json["attachments"][0]["photo"]["sizes"][0]["url"].stringValue
         self.commentsCount = json["comments"]["count"].intValue

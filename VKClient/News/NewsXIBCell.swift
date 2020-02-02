@@ -25,15 +25,6 @@ class NewsXIBCell: UITableViewCell {
     
     @IBOutlet weak var newsTextLabel: UILabel!
     
-    private let dateFormater: DateFormatter = {
-        let dF = DateFormatter()
-        dF.dateFormat = "HH:mm dd-MM-yyyy"
-        return dF
-    }()
-    
-    
-    
-    
     @IBAction func likeButtonTap(_ sender: Any) {
         
         if likeButton.currentImage!.isEqual(UIImage(named: "EmptyHeart")) {
@@ -72,12 +63,11 @@ class NewsXIBCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    public func configure(with news: News?) {
+    public func configure(with news: News?, dateString: String) {
         
         guard var sourceId = news?.sourceId else {return}
         var postAutor: String = ""
         var avatarURL: String = ""
-        var postDate: Date = Date.distantPast
         var postImageUrl: String = ""
         guard sourceId != 0 else {return}
         if sourceId > 0 {
@@ -89,7 +79,6 @@ class NewsXIBCell: UITableViewCell {
                 else {return}
             postAutor = user.firstName + " " + user.secondName
             avatarURL = user.avatar
-            postDate = Date(timeIntervalSince1970: news?.date ?? 0)
             postImageUrl = news?.postPhoto ?? ""
             
         } else {
@@ -102,13 +91,12 @@ class NewsXIBCell: UITableViewCell {
             else {return}
             postAutor = group.name
             avatarURL = group.photo_100
-            postDate = Date(timeIntervalSince1970: news?.date ?? 0)
             postImageUrl = news?.postPhoto ?? ""
         }
         avatarImage.kf.setImage(with: URL(string: avatarURL))
         nameLAbel.text = postAutor
         newsTextLabel.text = news?.newsText
-        dataLabel.text = dateFormater.string(from: postDate)
+        dataLabel.text = dateString
         //imageView?.kf.setImage(with: URL(string: postImageUrl))
         likeCountLabel.text = String(news?.likesCount ?? 0 )
         commentCountLabel.text = String(news?.commentsCount ?? 0)

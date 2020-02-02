@@ -15,6 +15,12 @@ class NewsVC: UIViewController {
     var token: NotificationToken?
     private lazy var news =  try? Realm().objects(News.self)
     
+    private let dateFormater: DateFormatter = {
+        let dF = DateFormatter()
+        dF.dateFormat = "HH:mm dd-MM-yyyy"
+        return dF
+    }()
+    private var dateCache = [IndexPath: String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +71,13 @@ extension NewsVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsXIBCell" ) as! NewsXIBCell
         guard let news = news?[indexPath.row] else {return cell}
         
-        cell.configure(with: news)
+        let dateString: String = dateCache[indexPath] ?? {
+           let dateString = dateFormater.string(from: news.date)
+           dateCache[indexPath] = dateString
+           return dateString
+        }()
+        
+        cell.configure(with: news, dateString: dateString)
         
         return cell
     }

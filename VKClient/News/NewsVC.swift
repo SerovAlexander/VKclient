@@ -69,16 +69,15 @@ extension NewsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsXIBCell" ) as! NewsXIBCell
-        guard let news = news?[indexPath.row] else {return cell}
+        guard let news = news?[indexPath.row] else { return cell }
         
         let dateString: String = dateCache[indexPath] ?? {
-           let dateString = dateFormater.string(from: news.date)
-           dateCache[indexPath] = dateString
-           return dateString
-        }()
+            let dateString = dateFormater.string(from: news.date)
+            dateCache[indexPath] = dateString
+            return dateString
+            }()
         
         cell.configure(with: news, dateString: dateString)
-        
         return cell
     }
 }

@@ -7,21 +7,34 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyGroupCell: UITableViewCell {
 
-    @IBOutlet weak var GroupName: UILabel!
-    @IBOutlet weak var GroupImage: UIImageView!
+    @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var groupImage: UIImageView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+       super.awakeFromNib()
+        groupImage.layer.masksToBounds = true
     }
-
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        groupImage.layer.cornerRadius  = 45
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
+    public func configure(with group: Items) {
+        groupName.text = group.name
+        
+                let url = URL(string: group.photo_100)
+                groupImage.kf.setImage(with: url)
+        
+        
+    }
 }
+

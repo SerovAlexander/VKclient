@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var loginTextField: UITextField!
@@ -37,12 +37,12 @@ class ViewController: UIViewController {
         let insets = UIEdgeInsets.zero
         self.scrollView.contentInset = insets
         self.scrollView.scrollIndicatorInsets = insets
-  
+        
     }
     @IBAction func logginButtonTap(_ sender: Any){
-       let login = self.loginTextField.text ?? ""
+        let login = self.loginTextField.text ?? ""
         let pass = self.passwordTextField.text ?? ""
-    
+        
         if login == "" && pass == "" {
             performSegue(withIdentifier: "SuccessLogin", sender: nil)
             print("Успешно")
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
                 print("OK TAP")
             }))
-        self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

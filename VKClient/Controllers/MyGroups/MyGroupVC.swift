@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class MyGroupVC: UITableViewController {
     
@@ -27,7 +28,6 @@ class MyGroupVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
     }
     
   
@@ -42,8 +42,8 @@ class MyGroupVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell") as! MyGroupCell
         
         let group = userGroups[indexPath.row]
-        cell.GroupName.text = group.nameGroup
-        cell.GroupImage.image = group.imageGroup
+        cell.groupName.text = group.nameGroup
+        cell.groupImage.image = group.imageGroup
         
         return cell
     }
@@ -64,5 +64,14 @@ extension MyGroupVC: AllGroupDelegate {
             userGroups.append(group)
 //        }
         tableView.reloadData()
+    }
+    
+}
+
+
+
+extension MyGroupVC: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
     }
 }

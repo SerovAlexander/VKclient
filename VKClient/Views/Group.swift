@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 struct Group {
     var nameGroup: String
@@ -21,3 +22,25 @@ let Girls = Group(nameGroup: "Девушки", imageGroup: UIImage(named: "Girls
 let Cinema = Group(nameGroup: "Кино", imageGroup: UIImage(named: "Cinema"))
 
 var Groups: [Group] = [Music,Books,Swift,Girls,Cinema]
+
+
+
+
+class Groupss: Codable {
+    let response: Response
+}
+
+class Response: Codable {
+    let items: [Items]
+}
+class Items: Object, Codable {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var photo_100: String = ""
+    
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
+

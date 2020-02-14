@@ -77,7 +77,7 @@ class NetworkService {
     
     // Функция для получения фотографий пользователя
     
-    static func getPhotos(token: String) {
+    static func getPhotos(completion: @escaping (Result<[UserPhoto]>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/photos.getAll"
         
@@ -88,9 +88,27 @@ class NetworkService {
         ]
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON { response in
-            guard let json = response.value else {return}
+            DispatchQueue.global().async {
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    let newJSON = json["response"]["items"].arrayValue
+                    let userPhotos = newJSON.map {UserPhoto($0)}
+                    print(userPhotos.count)
+                    completion(.success(userPhotos))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
             
-            print(json)
+            
+            
+            
+            
+            
+//            guard let json = response.value else {return}
+//            print(json)
+            
         }
     }
     

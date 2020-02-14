@@ -7,24 +7,49 @@
 //
 
 import UIKit
+import Foundation
+import Alamofire
+import RealmSwift
 
 class ProfileVC: UIViewController {
-
+    
+    @IBOutlet weak var photosCollectionView: UICollectionView!
+    @IBOutlet weak var userPhoto: UIImageView?
+    @IBOutlet var nameLanel: UILabel?
+    
+    private lazy var photos =  try? Realm().objects(UserPhoto.self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       let realm = try! Realm()
+        let userPhotos = realm.objects(UserPhoto.self)
+        
+        NetworkService.getPhotos{[weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let userPhotos):
+                DataBase.save(items: userPhotos)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
+            }
+        }
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension ProfileVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos?.count ?? 0
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
+        guard let userPhotos = photos?[indexPath.row] else { return cell }
+       
+        cell.configure(with: userPhotos)
+    
+        return cell
     }
-    */
-
+    
+    
 }

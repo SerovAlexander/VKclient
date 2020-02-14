@@ -22,6 +22,9 @@
 		045BFE3923082D72008CB552 /* MyGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE3823082D72008CB552 /* MyGroupVC.swift */; };
 		045BFE3D23083BFF008CB552 /* AllGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE3C23083BFF008CB552 /* AllGroupVC.swift */; };
 		045BFE44230856F0008CB552 /* FriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFE43230856F0008CB552 /* FriendVC.swift */; };
+		0466F62623F5CD0E00178A30 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466F62523F5CD0E00178A30 /* ProfileVC.swift */; };
+		0466F62823F5D50600178A30 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466F62723F5D50600178A30 /* UserPhoto.swift */; };
+		0466F62A23F6FCA200178A30 /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466F62923F6FCA200178A30 /* PhotosCell.swift */; };
 		046E37302316CDEA00402C74 /* AvatarShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E372F2316CDEA00402C74 /* AvatarShadowView.swift */; };
 		046E37342317E95D00402C74 /* FriendXIBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E37322317E95D00402C74 /* FriendXIBCell.swift */; };
 		046E37352317E95D00402C74 /* FriendXIBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046E37332317E95D00402C74 /* FriendXIBCell.xib */; };
@@ -55,6 +58,9 @@
 		045BFE3823082D72008CB552 /* MyGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupVC.swift; sourceTree = "<group>"; };
 		045BFE3C23083BFF008CB552 /* AllGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupVC.swift; sourceTree = "<group>"; };
 		045BFE43230856F0008CB552 /* FriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVC.swift; sourceTree = "<group>"; };
+		0466F62523F5CD0E00178A30 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		0466F62723F5D50600178A30 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPhoto.swift; path = VKClient/Profile/UserPhoto.swift; sourceTree = SOURCE_ROOT; };
+		0466F62923F6FCA200178A30 /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		046E372F2316CDEA00402C74 /* AvatarShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarShadowView.swift; sourceTree = "<group>"; };
 		046E37322317E95D00402C74 /* FriendXIBCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendXIBCell.swift; sourceTree = "<group>"; };
 		046E37332317E95D00402C74 /* FriendXIBCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendXIBCell.xib; sourceTree = "<group>"; };
@@ -157,8 +163,18 @@
 				04961ABB230AE77A004F0F4E /* Group.swift */,
 				04961ABD230C024E004F0F4E /* User.swift */,
 				041D1937231FBD2900B48FB3 /* News.swift */,
+				0466F62723F5D50600178A30 /* UserPhoto.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0466F62423F5B6F400178A30 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0466F62523F5CD0E00178A30 /* ProfileVC.swift */,
+				0466F62923F6FCA200178A30 /* PhotosCell.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		046E37312317E8F200402C74 /* Cell */ = {
@@ -191,6 +207,7 @@
 		0493A58A22F435EC0025E7C9 /* VKClient */ = {
 			isa = PBXGroup;
 			children = (
+				0466F62423F5B6F400178A30 /* Profile */,
 				04F53FE323094C58009D0477 /* Views */,
 				045BFE4923087A58008CB552 /* Model */,
 				04BE54D9233F8DE500BB356B /* Servises */,
@@ -375,7 +392,9 @@
 				04F53FE523094C78009D0477 /* GradientView.swift in Sources */,
 				041D1935231E7E9400B48FB3 /* NewsXIBCell.swift in Sources */,
 				04BE54D8233D156600BB356B /* Session.swift in Sources */,
+				0466F62823F5D50600178A30 /* UserPhoto.swift in Sources */,
 				04961ABC230AE77A004F0F4E /* Group.swift in Sources */,
+				0466F62623F5CD0E00178A30 /* ProfileVC.swift in Sources */,
 				045BFE44230856F0008CB552 /* FriendVC.swift in Sources */,
 				045BFE0D2306E02F008CB552 /* AllFriendsVC.swift in Sources */,
 				045BFE102306E092008CB552 /* AllFriendCell.swift in Sources */,
@@ -386,6 +405,7 @@
 				046E37342317E95D00402C74 /* FriendXIBCell.swift in Sources */,
 				0438E72423E1B6E5002EB1B4 /* PhotoService.swift in Sources */,
 				045BFE3D23083BFF008CB552 /* AllGroupVC.swift in Sources */,
+				0466F62A23F6FCA200178A30 /* PhotosCell.swift in Sources */,
 				045BFE3923082D72008CB552 /* MyGroupVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

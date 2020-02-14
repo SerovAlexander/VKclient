@@ -9,5 +9,11 @@
 import UIKit
 
 class PhotosCell: UICollectionViewCell {
+    @IBOutlet var userPhotos: UIImageView!
     
+    
+    public func configure(with userPhoto: UserPhoto) {
+        let url = URL(string: userPhoto.userPhotos)
+        userPhotos.kf.setImage(with: url)
+    }
 }

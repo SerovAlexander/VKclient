@@ -22,16 +22,18 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       let realm = try! Realm()
+        let realm = try! Realm()
         let userPhotos = realm.objects(UserPhoto.self)
         
-        NetworkService.getPhotos{[weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let userPhotos):
-                DataBase.save(items: userPhotos)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
+        DispatchQueue.global().async {
+            NetworkService.getPhotos{[weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let userPhotos):
+                    DataBase.save(items: userPhotos)
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
             }
         }
     }

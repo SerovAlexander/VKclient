@@ -100,15 +100,6 @@ class NetworkService {
                     completion(.failure(error))
                 }
             }
-            
-            
-            
-            
-            
-            
-//            guard let json = response.value else {return}
-//            print(json)
-            
         }
     }
     

@@ -12,8 +12,8 @@ class PhotosCell: UICollectionViewCell {
     @IBOutlet var userPhotos: UIImageView!
     
     
-    public func configure(with userPhoto: UserPhoto) {
-        let url = URL(string: userPhoto.userPhotos)
+    public func configure(with userPhoto: Size) {
+        let url = URL(string: userPhoto.url)
         userPhotos.kf.setImage(with: url)
     }
 }

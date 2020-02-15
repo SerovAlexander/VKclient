@@ -83,7 +83,7 @@ class NetworkService {
         
         let params: Parameters = [
             "access_token": Session.shared.token,
-            "no_service_albums": "1",
+            "no_service_albums": "0",
             "v": "5.77"
         ]
         
@@ -94,7 +94,7 @@ class NetworkService {
                     let json = JSON(value)
                     let newJSON = json["response"]["items"].arrayValue
                     let userPhotos = newJSON.map {UserPhoto($0)}
-                    print(userPhotos.count)
+                    print(userPhotos)
                     completion(.success(userPhotos))
                 case .failure(let error):
                     completion(.failure(error))

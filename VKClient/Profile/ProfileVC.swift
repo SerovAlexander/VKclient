@@ -19,8 +19,13 @@ class ProfileVC: UIViewController {
     
     private lazy var photos =  try? Realm().objects(UserPhoto.self)
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let url = URL(string: photos?[2].sizes[0].url ?? "")
+//        userPhoto?.kf.setImage(with: url)
         
         let realm = try! Realm()
         let userPhotos = realm.objects(UserPhoto.self)
@@ -31,6 +36,9 @@ class ProfileVC: UIViewController {
                 switch result {
                 case .success(let userPhotos):
                     DataBase.save(items: userPhotos)
+                    DispatchQueue.main.sync {
+                        self.photosCollectionView.reloadData()
+                    }
                 case .failure(let error):
                     fatalError(error.localizedDescription)
                 }
@@ -46,12 +54,18 @@ extension ProfileVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
-        guard let userPhotos = photos?[indexPath.row] else { return cell }
-       
-        cell.configure(with: userPhotos)
+        guard let userPhotos = photos?[indexPath.row].sizes else { return cell }
+        
+        var photoSize: Size = userPhotos[0]
+        for size in userPhotos {
+            if size.type == "y" {
+                photoSize = size
+                break
+            }
+        }
+      
+        cell.configure(with: photoSize)
     
         return cell
     }
-    
-    
 }

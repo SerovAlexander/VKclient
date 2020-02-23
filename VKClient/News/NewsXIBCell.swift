@@ -103,7 +103,6 @@ class NewsXIBCell: UITableViewCell {
         
         if news?.userLike == 1{
             likeButton.setImage(UIImage(named: "FullHeart"), for: .normal)
-            
         }
         
     }

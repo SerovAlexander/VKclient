@@ -111,6 +111,7 @@
 			children = (
 				0493A58D22F435EC0025E7C9 /* ViewController.swift */,
 				044781B1233A8A4100CFED44 /* LoginViewController.swift */,
+				0466F62423F5B6F400178A30 /* Profile */,
 				041D1930231E7DB600B48FB3 /* News */,
 				045BFE0E2306E036008CB552 /* AllFriends */,
 				045BFE3E23084DB4008CB552 /* Friend */,
@@ -174,7 +175,8 @@
 				0466F62523F5CD0E00178A30 /* ProfileVC.swift */,
 				0466F62923F6FCA200178A30 /* PhotosCell.swift */,
 			);
-			path = Profile;
+			name = Profile;
+			path = ../Profile;
 			sourceTree = "<group>";
 		};
 		046E37312317E8F200402C74 /* Cell */ = {
@@ -207,7 +209,6 @@
 		0493A58A22F435EC0025E7C9 /* VKClient */ = {
 			isa = PBXGroup;
 			children = (
-				0466F62423F5B6F400178A30 /* Profile */,
 				04F53FE323094C58009D0477 /* Views */,
 				045BFE4923087A58008CB552 /* Model */,
 				04BE54D9233F8DE500BB356B /* Servises */,

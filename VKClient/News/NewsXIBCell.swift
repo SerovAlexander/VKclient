@@ -65,18 +65,18 @@ class NewsXIBCell: UITableViewCell {
     }
     public func configure(with news: News?, dateString: String) {
         
-        guard var sourceId = news?.sourceId else {return}
+        guard var sourceId = news?.sourceId else { return }
         var postAutor: String = ""
         var avatarURL: String = ""
         var postImageUrl: String = ""
-        guard sourceId != 0 else {return}
+        guard sourceId != 0 else { return }
         if sourceId > 0 {
             if news == nil {
                 return
             }
             guard let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
                 let user = sourceDB.first
-                else {return}
+                else { return }
             postAutor = user.firstName + " " + user.secondName
             avatarURL = user.avatar
             postImageUrl = news?.postPhoto ?? ""

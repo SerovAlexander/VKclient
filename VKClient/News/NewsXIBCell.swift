@@ -97,7 +97,7 @@ class NewsXIBCell: UITableViewCell {
         nameLAbel.text = postAutor
         newsTextLabel.text = news?.newsText
         dataLabel.text = dateString
-        //imageView?.kf.setImage(with: URL(string: postImageUrl))
+        imageView?.kf.setImage(with: URL(string: postImageUrl))
         likeCountLabel.text = String(news?.likesCount ?? 0 )
         commentCountLabel.text = String(news?.commentsCount ?? 0)
         

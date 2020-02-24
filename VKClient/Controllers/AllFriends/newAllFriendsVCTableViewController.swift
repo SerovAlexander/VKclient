@@ -34,16 +34,14 @@ class newAllFriendsVCTableViewController: UITableViewController {
                 }
                 
             }
-
-        DispatchQueue.global().async {
-            NetworkService.loadFriends { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let users):
-                    DataBase.save(items: users)
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
-                }
+// Делаю запрос на получения списка друзей
+        NetworkService.loadFriends { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let users):
+                DataBase.save(items: users)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
     }

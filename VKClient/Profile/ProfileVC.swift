@@ -29,19 +29,19 @@ class ProfileVC: UIViewController {
         
         let realm = try! Realm()
         let userPhotos = realm.objects(UserPhoto.self)
+
+//Делаю запрос на получение фотографий профиля
         
-        DispatchQueue.global().async {
-            NetworkService.getPhotos{[weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let userPhotos):
-                    DataBase.save(items: userPhotos)
-                    DispatchQueue.main.sync {
-                        self.photosCollectionView.reloadData()
-                    }
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
+        NetworkService.getPhotos{[weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let userPhotos):
+                DataBase.save(items: userPhotos)
+                DispatchQueue.main.sync {
+                    self.photosCollectionView.reloadData()
                 }
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
     }

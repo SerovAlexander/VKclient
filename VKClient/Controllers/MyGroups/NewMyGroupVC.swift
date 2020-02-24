@@ -35,16 +35,14 @@ class NewMyGroupVC: UITableViewController {
                     print("error")
                 }
             }
-        
-        DispatchQueue.global().async {
-            NetworkService.getGroup { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let groups):
-                    DataBase.save(items: groups)
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
-                }
+//Делаю запрос на получения списка групп
+        NetworkService.getGroup { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let groups):
+                DataBase.save(items: groups)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
     }

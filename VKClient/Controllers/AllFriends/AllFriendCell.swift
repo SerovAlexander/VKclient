@@ -12,7 +12,7 @@ import Kingfisher
 class AllFriendCell: UITableViewCell {
     
     @IBOutlet weak var friendName: UILabel!
-    @IBOutlet weak var avatarShadowView: AvatarShadowView!
+    @IBOutlet weak var avatarImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +28,6 @@ class AllFriendCell: UITableViewCell {
     public func configure(with user: User) {
         friendName.text = user.firstName + " " + user.secondName
         let url = URL(string: user.avatar)
-        avatarShadowView.friendAvatar.kf.setImage(with: url)
+        avatarImage.kf.setImage(with: url)
     }
 }

@@ -54,7 +54,7 @@ class NewsTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTopXIBCell", for: indexPath) as! NewsTopXIBCell
-        
+        if indexPath.row == 0 {
         guard let news = news?[indexPath.row] else { return cell }
         
         let dateString: String = dateCache[indexPath] ?? {
@@ -67,6 +67,14 @@ class NewsTVC: UITableViewController {
         cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
         
         return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTextCell", for: indexPath) as! NewsTextCell
+            guard let news = news?[indexPath.row] else { return cell }
+            
+            cell.configure(with: news)
+            return cell
+            
+        }
     }
     
     

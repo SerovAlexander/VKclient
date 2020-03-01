@@ -50,12 +50,7 @@ class NewsXIBCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        avatarImage.layer.masksToBounds = true
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        avatarImage.layer.cornerRadius  = 27
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -97,7 +92,7 @@ class NewsXIBCell: UITableViewCell {
         nameLAbel.text = postAutor
         newsTextLabel.text = news?.newsText
         dataLabel.text = dateString
-        imageView?.kf.setImage(with: URL(string: postImageUrl))
+//        imageView?.kf.setImage(with: URL(string: postImageUrl))
         likeCountLabel.text = String(news?.likesCount ?? 0 )
         commentCountLabel.text = String(news?.commentsCount ?? 0)
         

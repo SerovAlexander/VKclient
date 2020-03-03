@@ -13,9 +13,15 @@ class newAllFriendsVCTableViewController: UITableViewController {
     
     var token: NotificationToken?
     
+    @IBOutlet var searchBar: UITableView!
+    
     private lazy var users = try? Realm().objects(User.self).sorted(byKeyPath: "id")
     
     override func viewDidLoad() {
+  
+        //Реализация делегата внутри класса newAllFriendsVCTableViewController
+        searchBar.delegate = self
+        
         super.viewDidLoad()
             let realm = try! Realm()
             let users = realm.objects(User.self)
@@ -62,3 +68,14 @@ class newAllFriendsVCTableViewController: UITableViewController {
     
     
 }
+// Расширения класса для реализации работы SearchBar
+extension newAllFriendsVCTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+   
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Кнопка")
+    }
+}
+

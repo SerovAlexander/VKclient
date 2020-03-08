@@ -74,7 +74,7 @@ class NewsXIBCell: UITableViewCell {
                 else { return }
             postAutor = user.firstName + " " + user.secondName
             avatarURL = user.avatar
-            postImageUrl = news?.postPhoto ?? ""
+//            postImageUrl = news?.postPhoto ?? ""
             
         } else {
             sourceId = -sourceId
@@ -86,7 +86,7 @@ class NewsXIBCell: UITableViewCell {
             else {return}
             postAutor = group.name
             avatarURL = group.photo_100
-            postImageUrl = news?.postPhoto ?? ""
+//            postImageUrl = news?.postPhoto ?? ""
         }
         avatarImage.kf.setImage(with: URL(string: avatarURL))
         nameLAbel.text = postAutor

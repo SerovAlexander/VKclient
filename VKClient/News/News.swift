@@ -16,8 +16,8 @@ class News: Object {
     @objc dynamic var newsText: String = ""
     @objc dynamic var date: Date = Date.distantPast
     @objc dynamic var post_id: Int = 0
-    @objc dynamic var postPhoto: String = ""
-    
+    var postPhoto = List<Photo>()
+
     @objc dynamic var commentsCount: Int = 0
     @objc dynamic var likesCount: Int = 0
     @objc dynamic var userLike: Int = 0
@@ -30,7 +30,7 @@ class News: Object {
         let date = json["date"].doubleValue
         self.date = Date(timeIntervalSince1970: date)
         self.post_id = json["post_id"].intValue
-        self.postPhoto = json["attachments"][0]["photo"]["sizes"][0]["url"].stringValue
+        self.postPhoto.append(objectsIn: json["attachments"].map{Photo($1)})
         self.commentsCount = json["comments"]["count"].intValue
         self.likesCount = json["likes"]["count"].intValue
         self.userLike = json["likes"]["user_likes"].intValue
@@ -40,6 +40,17 @@ class News: Object {
     }
 }
 
+class Photo: Object {
+    
+    var sizes = List<Size>()
+    
+   convenience init(_ json: JSON) {
+    self.init()
+        self.sizes.append(objectsIn: json["sizes"].map {Size($1)})
+
+        
+    }
+}
 
 
 

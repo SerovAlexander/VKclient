@@ -37,7 +37,7 @@ class NewsContentCell: UITableViewCell {
             guard let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
                 let user = sourceDB.first
                 else { return }
-            postImageUrl = news?.postPhoto ?? ""
+//            postImageUrl = news?.postPhoto ?? ""
             
         } else {
             sourceId = -sourceId
@@ -47,10 +47,10 @@ class NewsContentCell: UITableViewCell {
             guard let sourceDB = try? Realm().objects(Items.self).filter("id == %@", sourceId),
                 let group = sourceDB.first
                 else {return}
-            postImageUrl = news?.postPhoto ?? ""
+//            postImageUrl = news?.postPhoto ?? ""
         }
         
-        newsContentView?.kf.setImage(with: URL(string: postImageUrl))
+//        newsContentView?.kf.setImage(with: URL(string: postImageUrl))
         
         
     }

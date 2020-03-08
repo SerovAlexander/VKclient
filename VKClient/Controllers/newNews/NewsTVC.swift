@@ -13,7 +13,7 @@ class NewsTVC: UITableViewController {
     
     var token: NotificationToken?
     private lazy var news =  try? Realm().objects(News.self)
-    
+
     private let dateFormater: DateFormatter = {
         let dF = DateFormatter()
         dF.dateFormat = "HH:mm dd-MM-yyyy"
@@ -24,6 +24,9 @@ class NewsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
         
         NetworkService.getNews{[weak self] result in
             guard let self = self else { return }

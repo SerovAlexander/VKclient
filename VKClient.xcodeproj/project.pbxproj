@@ -38,6 +38,7 @@
 		04BE54D8233D156600BB356B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE54D7233D156600BB356B /* Session.swift */; };
 		04BE54DB233F8E2D00BB356B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE54DA233F8E2D00BB356B /* NetworkService.swift */; };
 		04D8C5562406D1CD00FE9203 /* NewsTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C5552406D1CD00FE9203 /* NewsTextCell.swift */; };
+		04EBC98D24165A0500540AE7 /* NewsContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC98C24165A0500540AE7 /* NewsContentCollectionViewCell.swift */; };
 		04F53FE523094C78009D0477 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F53FE423094C78009D0477 /* GradientView.swift */; };
 		77A615590BA6714E4C96C928 /* Pods_VKClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB31D2DC294FC3E0926BCEB /* Pods_VKClient.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		04BE54D7233D156600BB356B /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		04BE54DA233F8E2D00BB356B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		04D8C5552406D1CD00FE9203 /* NewsTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTextCell.swift; sourceTree = "<group>"; };
+		04EBC98C24165A0500540AE7 /* NewsContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		04F53FE423094C78009D0477 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		89E5A775F45BAF9774C6923F /* Pods-VKClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.release.xcconfig"; sourceTree = "<group>"; };
 		9EB31D2DC294FC3E0926BCEB /* Pods_VKClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +204,7 @@
 				04D8C5552406D1CD00FE9203 /* NewsTextCell.swift */,
 				0433CAA6240C1CCA00EEA0B9 /* NewsContentCell.swift */,
 				0433CAAA240C23B300EEA0B9 /* NewsFooterCell.swift */,
+				04EBC98C24165A0500540AE7 /* NewsContentCollectionViewCell.swift */,
 			);
 			path = newNews;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				041D1935231E7E9400B48FB3 /* NewsXIBCell.swift in Sources */,
 				0433CAA9240C20EF00EEA0B9 /* ButtonLike.swift in Sources */,
 				04BE54D8233D156600BB356B /* Session.swift in Sources */,
+				04EBC98D24165A0500540AE7 /* NewsContentCollectionViewCell.swift in Sources */,
 				0466F62823F5D50600178A30 /* UserPhoto.swift in Sources */,
 				04961ABC230AE77A004F0F4E /* Group.swift in Sources */,
 				0466F62623F5CD0E00178A30 /* ProfileVC.swift in Sources */,

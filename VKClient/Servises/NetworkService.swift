@@ -122,7 +122,7 @@ class NetworkService {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    print(json)
+//                    print(json)
                     let newJSON = json["response"]["items"].arrayValue
                     let news = newJSON.map {News($0)}
                     comletion(.success(news))

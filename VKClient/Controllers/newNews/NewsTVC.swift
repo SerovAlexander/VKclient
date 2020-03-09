@@ -33,11 +33,12 @@ class NewsTVC: UITableViewController {
             switch result {
             case .success(let news):
                 DataBase.save(items: news)
+                self.tableView.reloadData()
             case .failure(let error):
                 fatalError(error.localizedDescription)
+                
             }
         }
-        
     }
     
     
@@ -57,7 +58,8 @@ class NewsTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
-        case 0: let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTopXIBCell", for: indexPath) as! NewsTopXIBCell
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTopXIBCell", for: indexPath) as! NewsTopXIBCell
         guard let news = news?[indexPath.section] else { return cell }
         
         let dateString: String = dateCache[indexPath] ?? {
@@ -68,16 +70,18 @@ class NewsTVC: UITableViewController {
         cell.configure(with: news, dateString: dateString)
             return cell
             
-        case 1: let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTextCell", for: indexPath) as! NewsTextCell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTextCell", for: indexPath) as! NewsTextCell
         guard let news = news?[indexPath.section] else { return cell }
         
         cell.configure(with: news)
             return cell
-        case 2: let cell = tableView.dequeueReusableCell(withIdentifier: "NewsContentCell", for: indexPath) as! NewsContentCell
-        guard let news = news?[indexPath.section] else { return cell }
-        cell.configure(with: news)
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsContentCell", for: indexPath) as! NewsContentCell
+        
             return cell
-        case 3: let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFooterCell", for: indexPath) as! NewsFooterCell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFooterCell", for: indexPath) as! NewsFooterCell
          guard let news = news?[indexPath.section] else { return cell }
         cell.configure(with: news)
             return cell
@@ -85,4 +89,39 @@ class NewsTVC: UITableViewController {
             return UITableViewCell()
         }
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            if let cell = cell as? NewsContentCell {
+                cell.collectionView.dataSource = self
+                cell.collectionView.reloadData()
+            }
+        }
+    }
+}
+
+extension NewsTVC: UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsContentCollectionViewCell", for: indexPath) as! NewsContentCollectionViewCell
+        guard let photo = news?[indexPath.section].postPhoto.first?.sizes else { return cell }
+        guard let news = news?[indexPath.section] else { return cell }
+        
+        var photoSize: Size = photo[0]
+        for size in photo {
+            if size.type == "y" {
+                photoSize = size
+                break
+            }
+        }
+        cell.configure(with: news, and: photoSize)
+        
+            return cell
+    }
+    
+    
 }

@@ -628,58 +628,86 @@
                                     <outlet property="nameLabel" destination="CVd-t3-64d" id="ZrB-bg-MeW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTextCell" id="3UX-ed-ULw" customClass="NewsTextCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="115.5" width="414" height="46"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="11" reuseIdentifier="NewsTextCell" id="3UX-ed-ULw" customClass="NewsTextCell" customModule="VKClient" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115.5" width="414" height="26.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3UX-ed-ULw" id="tMO-24-u2L" customClass="NewsTextCell" customModule="VKClient" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3UX-ed-ULw" translatesAutoresizingMaskIntoConstraints="NO" id="tMO-24-u2L" customClass="NewsTextCell" customModule="VKClient" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="26.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7g2-Ki-0Ir">
-                                            <rect key="frame" x="3" y="3" width="408" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="IGB-uk-bFq"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7g2-Ki-0Ir">
+                                            <rect key="frame" x="3" y="3" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="7g2-Ki-0Ir" secondAttribute="trailing" constant="3" id="fcl-2i-ZOK"/>
+                                        <constraint firstAttribute="trailing" secondItem="7g2-Ki-0Ir" secondAttribute="trailing" constant="10" id="fcl-2i-ZOK"/>
                                         <constraint firstItem="7g2-Ki-0Ir" firstAttribute="leading" secondItem="tMO-24-u2L" secondAttribute="leading" constant="3" id="lIC-4q-8kf"/>
                                         <constraint firstItem="7g2-Ki-0Ir" firstAttribute="top" secondItem="tMO-24-u2L" secondAttribute="top" constant="3" id="rVw-fJ-fyE"/>
                                         <constraint firstAttribute="bottom" secondItem="7g2-Ki-0Ir" secondAttribute="bottom" constant="3" id="wXp-wB-2hM"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <viewLayoutGuide key="safeArea" id="1g6-Cg-AxL"/>
                                 <connections>
                                     <outlet property="newsTextLabel" destination="7g2-Ki-0Ir" id="gVl-eB-WRC"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsContentCell" id="QTx-qL-RG7" customClass="NewsContentCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="161.5" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsContentCell" rowHeight="360" id="QTx-qL-RG7" customClass="NewsContentCell" customModule="VKClient" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="142" width="414" height="360"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QTx-qL-RG7" id="A7p-S8-pS2" customClass="NewsContentCell" customModule="VKClient" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6p2-bd-vbW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                        </imageView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dwe-6t-YV3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="2" minimumInteritemSpacing="2" id="F10-M4-7i8">
+                                                <size key="itemSize" width="200" height="200"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsContentCollectionViewCell" id="RoR-BN-bLL" customClass="NewsContentCollectionViewCell" customModule="VKClient" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Dzuba" translatesAutoresizingMaskIntoConstraints="NO" id="9Lt-Zt-sGE">
+                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="9Lt-Zt-sGE" secondAttribute="trailing" id="Ido-6B-iAh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="9Lt-Zt-sGE" secondAttribute="bottom" id="e9g-EL-hWb"/>
+                                                        <constraint firstItem="9Lt-Zt-sGE" firstAttribute="top" secondItem="RoR-BN-bLL" secondAttribute="top" id="mni-Oa-Y5F"/>
+                                                        <constraint firstItem="9Lt-Zt-sGE" firstAttribute="leading" secondItem="RoR-BN-bLL" secondAttribute="leading" id="waL-YM-unf"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="newImage" destination="9Lt-Zt-sGE" id="cff-PP-685"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="6p2-bd-vbW" firstAttribute="top" secondItem="A7p-S8-pS2" secondAttribute="top" id="C5A-3y-CVY"/>
-                                        <constraint firstAttribute="trailing" secondItem="6p2-bd-vbW" secondAttribute="trailing" id="dxK-jm-Vde"/>
-                                        <constraint firstItem="6p2-bd-vbW" firstAttribute="leading" secondItem="A7p-S8-pS2" secondAttribute="leading" id="oK8-Ud-j8N"/>
-                                        <constraint firstAttribute="bottom" secondItem="6p2-bd-vbW" secondAttribute="bottom" id="oqD-Zp-DHX"/>
+                                        <constraint firstAttribute="bottom" secondItem="Dwe-6t-YV3" secondAttribute="bottom" id="6aZ-5P-gyT"/>
+                                        <constraint firstItem="Dwe-6t-YV3" firstAttribute="leading" secondItem="A7p-S8-pS2" secondAttribute="leading" id="Hgl-cE-DPQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dwe-6t-YV3" secondAttribute="trailing" id="LSh-Pp-yLf"/>
+                                        <constraint firstItem="Dwe-6t-YV3" firstAttribute="top" secondItem="A7p-S8-pS2" secondAttribute="top" id="gTy-YS-7cA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="newsContentView" destination="6p2-bd-vbW" id="iFn-Cm-k48"/>
+                                    <outlet property="collectionView" destination="Dwe-6t-YV3" id="QRQ-8K-EWL"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsFooterCell" id="vtG-wt-EjQ" customClass="NewsFooterCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="205.5" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="502" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vtG-wt-EjQ" id="9ed-L1-xwk">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -823,6 +851,7 @@
     </scenes>
     <resources>
         <image name="David" width="128" height="85"/>
+        <image name="Dzuba" width="128" height="85"/>
         <image name="EmptyHeart" width="40" height="40"/>
         <image name="Friend" width="24" height="24"/>
         <image name="Group" width="24" height="24"/>

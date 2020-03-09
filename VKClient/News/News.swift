@@ -30,7 +30,7 @@ class News: Object {
         let date = json["date"].doubleValue
         self.date = Date(timeIntervalSince1970: date)
         self.post_id = json["post_id"].intValue
-        self.postPhoto.append(objectsIn: json["attachments"].map{Photo($1)})
+        self.postPhoto.append(objectsIn: json["attachments"].map{Photo($1["Photo"])})
         self.commentsCount = json["comments"]["count"].intValue
         self.likesCount = json["likes"]["count"].intValue
         self.userLike = json["likes"]["user_likes"].intValue

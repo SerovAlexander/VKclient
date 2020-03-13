@@ -328,7 +328,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9D24FA1A-D005-4E48-B91F-635BFB45C202"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKClient/Servises/NetworkService.swift"
@@ -392,7 +392,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "59D191D7-C1D3-4093-B298-977CEBCF1DD1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKClient/Controllers/newNews/NewsTVC.swift"
@@ -405,7 +405,7 @@
             <Locations>
                <Location
                   uuid = "59D191D7-C1D3-4093-B298-977CEBCF1DD1 - 7c612755c51a81b0"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "VKClient.NewsTVC.viewDidLoad() -&gt; ()"
@@ -420,7 +420,7 @@
                </Location>
                <Location
                   uuid = "59D191D7-C1D3-4093-B298-977CEBCF1DD1 - 75135e2d7ce5e55a"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.Result&lt;Swift.Array&lt;VKClient.News&gt;&gt;) -&gt; () in VKClient.NewsTVC.viewDidLoad() -&gt; ()"
@@ -709,7 +709,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C8541B9C-5D61-4EC3-B6CF-4CC0B1573AAA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKClient/Controllers/newNews/NewsTVC.swift"
@@ -821,7 +821,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DC565156-B488-4631-9325-09485D0B878A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKClient/Controllers/newNews/NewsTVC.swift"
@@ -834,7 +834,7 @@
             <Locations>
                <Location
                   uuid = "DC565156-B488-4631-9325-09485D0B878A - 75135e2d7ce5e55a"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.Result&lt;Swift.Array&lt;VKClient.News&gt;&gt;) -&gt; () in VKClient.NewsTVC.viewDidLoad() -&gt; ()"
@@ -849,7 +849,7 @@
                </Location>
                <Location
                   uuid = "DC565156-B488-4631-9325-09485D0B878A - 75135e2d7ce5e55a"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.Result&lt;Swift.Array&lt;VKClient.News&gt;&gt;) -&gt; () in VKClient.NewsTVC.viewDidLoad() -&gt; ()"

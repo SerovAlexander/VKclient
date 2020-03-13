@@ -33,7 +33,6 @@ class NewsTVC: UITableViewController {
             switch result {
             case .success(let news):
                 DataBase.save(items: news)
-                self.tableView.reloadData()
             case .failure(let error):
                 fatalError(error.localizedDescription)
                 

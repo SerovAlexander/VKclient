@@ -12,9 +12,10 @@ import RealmSwift
 class NewsTVC: UITableViewController {
     
     var token: NotificationToken?
-    private lazy var news =  try? Realm().objects(News.self)
+    private lazy var news =  try? Realm().objects(News.self).sorted(byKeyPath: "date", ascending: false)
 
     private let dateFormater: DateFormatter = {
+        let date = NSDate()
         let dF = DateFormatter()
         dF.dateFormat = "HH:mm dd-MM-yyyy"
         return dF
@@ -25,8 +26,8 @@ class NewsTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 100
+//        tableView.rowHeight = UITableView.automaticDimension
         
         NetworkService.getNews{[weak self] result in
             guard let self = self else { return }

@@ -660,17 +660,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F3w-hc-x6v">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F3w-hc-x6v">
                                             <rect key="frame" x="20" y="11" width="374" height="338"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="leading" secondItem="A7p-S8-pS2" secondAttribute="leadingMargin" id="EsX-Ml-er9"/>
-                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="top" secondItem="A7p-S8-pS2" secondAttribute="topMargin" id="Yze-Sv-GMs"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="F3w-hc-x6v" secondAttribute="bottom" id="m6l-Sm-cfQ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="F3w-hc-x6v" secondAttribute="trailing" id="xPk-gM-Hm3"/>
+                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="leading" secondItem="A7p-S8-pS2" secondAttribute="leadingMargin" id="4dW-yw-duz"/>
+                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="bottom" secondItem="A7p-S8-pS2" secondAttribute="bottomMargin" id="Ro1-5h-3Fu"/>
+                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="top" secondItem="A7p-S8-pS2" secondAttribute="topMargin" id="Wr2-vK-7yc"/>
+                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="trailing" secondItem="A7p-S8-pS2" secondAttribute="trailingMargin" id="ox1-BM-8px"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="postImage" destination="F3w-hc-x6v" id="j4k-ML-daO"/>
                                 </connections>

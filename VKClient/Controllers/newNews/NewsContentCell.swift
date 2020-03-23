@@ -14,7 +14,38 @@ class NewsContentCell: UITableViewCell {
     
     
     
-    @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var postImage: UIImageView!
+    
+    public func configure(with news: News?, and size: Size) {
+    
+            guard var sourceId = news?.sourceId else { return }
+            var postImageUrl: String = ""
+            guard sourceId != 0 else { return }
+            if sourceId > 0 {
+                if news == nil {
+                    return
+                }
+                guard let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
+                    let user = sourceDB.first
+                    else { return }
+                postImageUrl = news?.postPhoto.first?.sizes.first?.url ?? ""
+    
+            } else {
+                sourceId = -sourceId
+                if news == nil {
+                    return
+                }
+                guard let sourceDB = try? Realm().objects(Items.self).filter("id == %@", sourceId),
+                    let group = sourceDB.first
+                    else {return}
+                postImageUrl = news?.postPhoto.first?.sizes.first?.url ?? ""
+            }
+    
+            postImage?.kf.setImage(with: URL(string: postImageUrl))
+    
+    
+        }
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()

@@ -44,12 +44,10 @@ class NewsTVC: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return news?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 4
     }
     
@@ -77,7 +75,20 @@ class NewsTVC: UITableViewController {
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsContentCell", for: indexPath) as! NewsContentCell
-        
+            
+            guard let photo = news?[indexPath.section].postPhoto.first?.sizes else { return cell }
+            guard let news = news?[indexPath.section] else { return cell }
+            
+            if photo.count > 0 {
+                    var photoSize: Size = photo[0]
+                    for size in photo {
+                        if size.type == "z" {
+                            photoSize = size
+                            break
+                        }
+                    }
+                    cell.configure(with: news, and: photoSize)
+            } 
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFooterCell", for: indexPath) as! NewsFooterCell
@@ -89,38 +100,46 @@ class NewsTVC: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 2 {
-            if let cell = cell as? NewsContentCell {
-                cell.collectionView.dataSource = self
-                cell.collectionView.reloadData()
-            }
-        }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard indexPath.row == 2 else { return UITableView.automaticDimension }
+        let tableWidth = tableView.bounds.width
+        let news = self.news?[indexPath.section]
+        let cellHeight = tableWidth * (news?.postPhoto.first?.sizes.first?.aspectRatio ?? 0)
+        return cellHeight
     }
+    
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row == 2 {
+//            if let cell = cell as? NewsContentCell {
+//                cell.collectionView.dataSource = self
+//                cell.collectionView.reloadData()
+//            }
+//        }
+//    }
 }
 
-extension NewsTVC: UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsContentCollectionViewCell", for: indexPath) as! NewsContentCollectionViewCell
-        guard let photo = news?[indexPath.section].postPhoto.first?.sizes else { return cell }
-        guard let news = news?[indexPath.section] else { return cell }
-        
-        var photoSize: Size = photo[0]
-        for size in photo {
-            if size.type == "y" {
-                photoSize = size
-                break
-            }
-        }
-        cell.configure(with: news, and: photoSize)
-        
-            return cell
-    }
-    
-    
-}
+//extension NewsTVC: UICollectionViewDataSource{
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 4
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsContentCollectionViewCell", for: indexPath) as! NewsContentCollectionViewCell
+//        guard let photo = news?[indexPath.section].postPhoto.first?.sizes else { return cell }
+//        guard let news = news?[indexPath.section] else { return cell }
+//
+//        var photoSize: Size = photo[0]
+//        for size in photo {
+//            if size.type == "y" {
+//                photoSize = size
+//                break
+//            }
+//        }
+//        cell.configure(with: news, and: photoSize)
+//
+//            return cell
+//    }
+//
+//
+//}

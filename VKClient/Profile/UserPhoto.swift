@@ -36,6 +36,11 @@ class Size: Object {
     @objc dynamic var height: Int = 0
     @objc dynamic var width: Int = 0
     
+    var aspectRatio: CGFloat? {
+        guard width != 0 else { return nil }
+        return CGFloat(height)/CGFloat(width)
+    }
+    
     convenience init(_ json: JSON) {
     self.init()
     

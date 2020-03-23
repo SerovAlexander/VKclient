@@ -47,16 +47,14 @@ class NewsVC: UIViewController {
             }
             
         }
-// Делаю запрос на получение новостей асинхронно в глобальной очереди
-        DispatchQueue.global().async {
-            NetworkService.getNews{[weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let news):
-                    DataBase.save(items: news)
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
-                }
+// Делаю запрос на получение новостей
+        NetworkService.getNews{[weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let news):
+                DataBase.save(items: news)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
     }

@@ -13,9 +13,15 @@ class newAllFriendsVCTableViewController: UITableViewController {
     
     var token: NotificationToken?
     
+    @IBOutlet var searchBar: UITableView!
+    
     private lazy var users = try? Realm().objects(User.self).sorted(byKeyPath: "id")
     
     override func viewDidLoad() {
+  
+        //Реализация делегата внутри класса newAllFriendsVCTableViewController
+        searchBar.delegate = self
+        
         super.viewDidLoad()
             let realm = try! Realm()
             let users = realm.objects(User.self)
@@ -34,16 +40,14 @@ class newAllFriendsVCTableViewController: UITableViewController {
                 }
                 
             }
-
-        DispatchQueue.global().async {
-            NetworkService.loadFriends { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let users):
-                    DataBase.save(items: users)
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
-                }
+// Делаю запрос на получения списка друзей
+        NetworkService.loadFriends { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let users):
+                DataBase.save(items: users)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
     }
@@ -64,3 +68,14 @@ class newAllFriendsVCTableViewController: UITableViewController {
     
     
 }
+// Расширения класса для реализации работы SearchBar
+extension newAllFriendsVCTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+   
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Кнопка")
+    }
+}
+

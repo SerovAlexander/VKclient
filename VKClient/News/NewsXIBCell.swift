@@ -50,12 +50,7 @@ class NewsXIBCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        avatarImage.layer.masksToBounds = true
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        avatarImage.layer.cornerRadius  = 27
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -79,7 +74,7 @@ class NewsXIBCell: UITableViewCell {
                 else { return }
             postAutor = user.firstName + " " + user.secondName
             avatarURL = user.avatar
-            postImageUrl = news?.postPhoto ?? ""
+//            postImageUrl = news?.postPhoto ?? ""
             
         } else {
             sourceId = -sourceId
@@ -91,18 +86,19 @@ class NewsXIBCell: UITableViewCell {
             else {return}
             postAutor = group.name
             avatarURL = group.photo_100
-            postImageUrl = news?.postPhoto ?? ""
+//            postImageUrl = news?.postPhoto ?? ""
         }
         avatarImage.kf.setImage(with: URL(string: avatarURL))
         nameLAbel.text = postAutor
         newsTextLabel.text = news?.newsText
         dataLabel.text = dateString
-        //imageView?.kf.setImage(with: URL(string: postImageUrl))
+//        imageView?.kf.setImage(with: URL(string: postImageUrl))
         likeCountLabel.text = String(news?.likesCount ?? 0 )
         commentCountLabel.text = String(news?.commentsCount ?? 0)
         
         if news?.userLike == 1{
             likeButton.setImage(UIImage(named: "FullHeart"), for: .normal)
+            
         }
         
     }

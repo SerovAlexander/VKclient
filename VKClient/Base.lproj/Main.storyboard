@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eLC-hE-VOn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eLC-hE-VOn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -153,11 +153,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="Ljm-YY-jQe" kind="relationship" relationship="viewControllers" id="o4f-r2-4O1"/>
                         <segue destination="dwx-vg-0kv" kind="relationship" relationship="viewControllers" id="prt-MI-LI5"/>
                         <segue destination="0Fd-D6-ZeA" kind="relationship" relationship="viewControllers" id="dxd-8o-LHB"/>
-                        <segue destination="sWN-aM-kjo" kind="relationship" relationship="viewControllers" id="Py9-Dc-7Yg"/>
                         <segue destination="FmH-cw-Ggb" kind="relationship" relationship="viewControllers" id="wCq-qc-3Bm"/>
-                        <segue destination="tUt-2Q-A2O" kind="relationship" relationship="viewControllers" id="DNp-hs-qXh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRt-n6-Zim" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,55 +231,6 @@
             </objects>
             <point key="canvasLocation" x="4826.0869565217399" y="-65.625"/>
         </scene>
-        <!--FriendVC-->
-        <scene sceneID="doP-tP-2t5">
-            <objects>
-                <collectionViewController storyboardIdentifier="FriendVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0V7-EK-2Bh" customClass="FriendVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fM0-6J-yna">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sw0-bp-rHb">
-                            <size key="itemSize" width="237" height="259"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendCell" id="3UG-eQ-Rof" customClass="FriendCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="88.5" y="0.0" width="237" height="259"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="237" height="259"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2u-BW-O9K">
-                                            <rect key="frame" x="0.0" y="0.0" width="237" height="259"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="h2u-BW-O9K" firstAttribute="leading" secondItem="3UG-eQ-Rof" secondAttribute="leading" id="AxM-hb-M1Z"/>
-                                    <constraint firstAttribute="trailing" secondItem="h2u-BW-O9K" secondAttribute="trailing" id="Esd-18-1Fi"/>
-                                    <constraint firstAttribute="bottom" secondItem="h2u-BW-O9K" secondAttribute="bottom" id="Jt2-aZ-gdX"/>
-                                    <constraint firstItem="h2u-BW-O9K" firstAttribute="top" secondItem="3UG-eQ-Rof" secondAttribute="top" id="LR9-zW-CfS"/>
-                                </constraints>
-                                <size key="customSize" width="237" height="259"/>
-                                <connections>
-                                    <outlet property="avatar" destination="h2u-BW-O9K" id="zs7-ls-AWF"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="0V7-EK-2Bh" id="pZo-9V-Jo5"/>
-                            <outlet property="delegate" destination="0V7-EK-2Bh" id="xny-oj-gmK"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XuM-C5-h4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5707.2463768115949" y="-65.625"/>
-        </scene>
         <!--Сообщества-->
         <scene sceneID="7GN-Ir-jrm">
             <objects>
@@ -348,7 +298,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lp1-0E-I8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6646.376811594203" y="616.74107142857144"/>
+            <point key="canvasLocation" x="4826" y="682"/>
         </scene>
         <!--All GroupVC-->
         <scene sceneID="fhK-K7-1Bo">
@@ -407,12 +357,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m45-Gm-YtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7527.5362318840589" y="616.74107142857144"/>
+            <point key="canvasLocation" x="5707" y="682"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="l1R-fm-kju">
             <objects>
-                <viewController id="vst-Cg-RYk" customClass="ProfileVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="vst-Cg-RYk" customClass="ProfileVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="15g-AO-pK6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -492,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scu-DN-84Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3005.7971014492755" y="-781.47321428571422"/>
+            <point key="canvasLocation" x="4825" y="-889"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="cUx-0k-2f3">
@@ -530,50 +480,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJn-IZ-xeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5736.2318840579719" y="616.74107142857144"/>
+            <point key="canvasLocation" x="3916" y="683"/>
         </scene>
         <!--Новости-->
-        <scene sceneID="56E-5k-baV">
-            <objects>
-                <viewController storyboardIdentifier="NewsVC" id="qJS-Rn-MKW" customClass="NewsVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Uyz-bJ-UEl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aa0-zy-tXR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NewsXIBCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsXIBCell" id="g3q-vB-pLw" customClass="NewsXIBCell" customModule="VKClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g3q-vB-pLw" id="Ivm-EP-NQI" customClass="NewsXIBCell" customModule="VKClient" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6Va-Z6-atP" firstAttribute="trailing" secondItem="aa0-zy-tXR" secondAttribute="trailing" id="0vj-z9-F39"/>
-                            <constraint firstItem="aa0-zy-tXR" firstAttribute="top" secondItem="6Va-Z6-atP" secondAttribute="top" id="2rr-tJ-nqu"/>
-                            <constraint firstItem="aa0-zy-tXR" firstAttribute="leading" secondItem="6Va-Z6-atP" secondAttribute="leading" id="KLw-G7-1Tw"/>
-                            <constraint firstItem="6Va-Z6-atP" firstAttribute="bottom" secondItem="aa0-zy-tXR" secondAttribute="bottom" id="V6U-yp-Sdv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Va-Z6-atP"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Новости" id="J9p-Lu-ZD8"/>
-                    <connections>
-                        <outlet property="newsTableView" destination="aa0-zy-tXR" id="S2t-Bl-Ugm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wcm-69-pti" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4826.0869565217399" y="1307.8125"/>
-        </scene>
-        <!--Item-->
         <scene sceneID="IJ6-P8-cjQ">
             <objects>
                 <tableViewController id="tUt-2Q-A2O" customClass="NewsTVC" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -719,31 +628,11 @@
                             <outlet property="delegate" destination="tUt-2Q-A2O" id="2S2-Qs-nbR"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="a53-cT-ugM"/>
-                    <navigationItem key="navigationItem" id="vol-Yh-tyd"/>
+                    <navigationItem key="navigationItem" title="Новости" id="vol-Yh-tyd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvF-St-2Ad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3005.7971014492755" y="2019.6428571428571"/>
-        </scene>
-        <!--Новости-->
-        <scene sceneID="Wdv-kY-hOY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sWN-aM-kjo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" image="safari" catalog="system" id="z0x-EV-rlG"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mTZ-dy-Zhk">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qJS-Rn-MKW" kind="relationship" relationship="rootViewController" id="E1W-Kl-EnV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yjW-Yd-yro" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3915.9420289855075" y="1307.8125"/>
+            <point key="canvasLocation" x="4826" y="1423"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="hsQ-QA-hbR">
@@ -762,25 +651,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTi-4w-TOv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096" y="-781"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8SA-rX-n5M">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QAr-2c-h7m" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3FZ-aA-GXI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tUt-2Q-A2O" kind="relationship" relationship="rootViewController" id="OG4-pC-SbY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uqw-W5-5A7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2097" y="2020"/>
+            <point key="canvasLocation" x="3917" y="-889"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dcU-8t-u15">
@@ -818,6 +689,25 @@
             </objects>
             <point key="canvasLocation" x="1326.0869565217392" y="138.61607142857142"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="gyc-sT-lNb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ljm-YY-jQe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="safari" catalog="system" id="a53-cT-ugM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rIY-GX-WTS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tUt-2Q-A2O" kind="relationship" relationship="rootViewController" id="MTN-Mi-icJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nvK-96-emG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3917" y="1423"/>
+        </scene>
     </scenes>
     <resources>
         <image name="David" width="128" height="85"/>
@@ -825,9 +715,6 @@
         <image name="Friend" width="24" height="24"/>
         <image name="Group" width="24" height="24"/>
         <image name="profile" width="24" height="24"/>
-        <image name="safari" catalog="system" width="64" height="60"/>
+        <image name="safari" catalog="system" width="128" height="121"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="DNp-hs-qXh"/>
-    </inferredMetricsTieBreakers>
 </document>

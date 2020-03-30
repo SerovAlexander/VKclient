@@ -60,12 +60,19 @@ class newAllFriendsVCTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllFriendCell", for: indexPath) as! AllFriendCell
-        guard let user = users?[indexPath.row] else {return cell}
+        guard let user = users?[indexPath.row] else { return cell }
         cell.configure(with: user)
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let user = users?[indexPath.row] else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
 }
 // Расширения класса для реализации работы SearchBar

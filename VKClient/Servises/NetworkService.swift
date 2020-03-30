@@ -77,15 +77,19 @@ class NetworkService {
     
     // Функция для получения фотографий пользователя
     
-    static func getPhotos(completion: @escaping (Result<[UserPhoto]>) -> Void) {
+    static func getPhotos(id: Int? = nil, completion: @escaping (Result<[UserPhoto]>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/photos.getAll"
         
-        let params: Parameters = [
+        var params: Parameters = [
             "access_token": Session.shared.token,
             "no_service_albums": "0",
             "v": "5.77"
         ]
+        
+        guard let id = id else { return }
+        params["owner_id"] = String(id)
+          
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON { response in
             DispatchQueue.global().async {

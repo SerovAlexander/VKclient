@@ -562,22 +562,22 @@
                                     <outlet property="newsTextLabel" destination="7g2-Ki-0Ir" id="gVl-eB-WRC"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsContentCell" rowHeight="360" id="QTx-qL-RG7" customClass="NewsContentCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="142" width="414" height="360"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsContentCell" rowHeight="592" id="QTx-qL-RG7" customClass="NewsContentCell" customModule="VKClient" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="142" width="414" height="592"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QTx-qL-RG7" id="A7p-S8-pS2" customClass="NewsContentCell" customModule="VKClient" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="592"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F3w-hc-x6v">
-                                            <rect key="frame" x="20" y="11" width="374" height="338"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F3w-hc-x6v">
+                                            <rect key="frame" x="20" y="11" width="374" height="570"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="leading" secondItem="A7p-S8-pS2" secondAttribute="leadingMargin" id="4dW-yw-duz"/>
-                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="bottom" secondItem="A7p-S8-pS2" secondAttribute="bottomMargin" id="Ro1-5h-3Fu"/>
-                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="top" secondItem="A7p-S8-pS2" secondAttribute="topMargin" id="Wr2-vK-7yc"/>
-                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="trailing" secondItem="A7p-S8-pS2" secondAttribute="trailingMargin" id="ox1-BM-8px"/>
+                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="leading" secondItem="A7p-S8-pS2" secondAttribute="leadingMargin" id="U5Q-us-YXN"/>
+                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="top" secondItem="A7p-S8-pS2" secondAttribute="topMargin" id="rSD-YR-bNg"/>
+                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="bottom" secondItem="A7p-S8-pS2" secondAttribute="bottomMargin" id="vYU-bx-2yD"/>
+                                        <constraint firstItem="F3w-hc-x6v" firstAttribute="trailing" secondItem="A7p-S8-pS2" secondAttribute="trailingMargin" id="yGg-kN-nzd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -586,7 +586,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsFooterCell" id="vtG-wt-EjQ" customClass="NewsFooterCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="502" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="734" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vtG-wt-EjQ" id="9ed-L1-xwk">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -632,7 +632,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvF-St-2Ad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4826" y="1423"/>
+            <point key="canvasLocation" x="4824.6376811594209" y="1422.9910714285713"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="hsQ-QA-hbR">

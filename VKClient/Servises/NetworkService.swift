@@ -77,7 +77,7 @@ class NetworkService {
     
     // Функция для получения фотографий пользователя
     
-    static func getPhotos(id: Int? = nil, completion: @escaping (Result<[UserPhoto]>) -> Void) {
+    static func getPhotos(id: Int?, completion: @escaping (Result<[UserPhoto]>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/photos.getAll"
         

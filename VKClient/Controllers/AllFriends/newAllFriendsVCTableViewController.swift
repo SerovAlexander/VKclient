@@ -70,6 +70,7 @@ class newAllFriendsVCTableViewController: UITableViewController {
         guard let user = users?[indexPath.row] else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+        vc.userId = user.id
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

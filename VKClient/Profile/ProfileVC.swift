@@ -19,20 +19,19 @@ class ProfileVC: UIViewController {
     
     private lazy var photos =  try? Realm().objects(UserPhoto.self)
     
+    var userId: Int?
+    
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        
-//        let url = URL(string: photos?[2].sizes[0].url ?? "")
-//        userPhoto?.kf.setImage(with: url)
-        
         let realm = try! Realm()
         let userPhotos = realm.objects(UserPhoto.self)
-
+        print(userId)
 //Делаю запрос на получение фотографий профиля
         
-        NetworkService.getPhotos{[weak self] result in
+        NetworkService.getPhotos(id: userId){[weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let userPhotos):

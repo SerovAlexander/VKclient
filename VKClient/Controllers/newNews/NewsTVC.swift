@@ -83,7 +83,7 @@ class NewsTVC: UITableViewController {
             if photo.count > 0 {
                     var photoSize: Size = photo[0]
                     for size in photo {
-                        if size.type == "z" {
+                        if size.type == "y" {
                             photoSize = size
                             break
                         }

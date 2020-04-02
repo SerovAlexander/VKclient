@@ -14,78 +14,47 @@ class NewsContentCell: UITableViewCell {
     
     
     
-
+    
     @IBOutlet weak var postImage: UIImageView!
     
     public func configure(with news: News?, and size: Size) {
-    
-            guard var sourceId = news?.sourceId else { return }
-            var postImageUrl: String = ""
-            guard sourceId != 0 else { return }
-            if sourceId > 0 {
-                if news == nil {
-                    return
-                }
-                guard let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
-                    let user = sourceDB.first
-                    else { return }
-                postImageUrl = news?.postPhoto.first?.sizes.first?.url ?? ""
-    
-            } else {
-                sourceId = -sourceId
-                if news == nil {
-                    return
-                }
-                guard let sourceDB = try? Realm().objects(Items.self).filter("id == %@", sourceId),
-                    let group = sourceDB.first
-                    else {return}
-                postImageUrl = news?.postPhoto.first?.sizes.first?.url ?? ""
+        
+        guard var sourceId = news?.sourceId else { return }
+        var postImageUrl: String = ""
+        guard sourceId != 0 else { return }
+        if sourceId > 0 {
+            if news == nil {
+                return
             }
-    
-            postImage?.kf.setImage(with: URL(string: postImageUrl))
-    
-    
+            guard let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
+                let user = sourceDB.first
+                else { return }
+            postImageUrl = size.url
+            //                    news?.postPhoto.first?.sizes.first?.url ?? ""
+            
+        } else {
+            sourceId = -sourceId
+            if news == nil {
+                return
+            }
+            guard let sourceDB = try? Realm().objects(Items.self).filter("id == %@", sourceId),
+                let group = sourceDB.first
+                else {return}
+            postImageUrl = size.url
         }
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-//    public func configure(with news: News?) {
-//
-//        guard var sourceId = news?.sourceId else { return }
-//        var postImageUrl: String = ""
-//        guard sourceId != 0 else { return }
-//        if sourceId > 0 {
-//            if news == nil {
-//                return
-//            }
-//            guard let sourceDB = try? Realm().objects(User.self).filter("id == %@", sourceId),
-//                let user = sourceDB.first
-//                else { return }
-////            postImageUrl = news?.postPhoto ?? ""
-//
-//        } else {
-//            sourceId = -sourceId
-//            if news == nil {
-//                return
-//            }
-//            guard let sourceDB = try? Realm().objects(Items.self).filter("id == %@", sourceId),
-//                let group = sourceDB.first
-//                else {return}
-////            postImageUrl = news?.postPhoto ?? ""
-//        }
-//
-////        newsContentView?.kf.setImage(with: URL(string: postImageUrl))
-//
-//
-//    }
+        
+        postImage?.kf.setImage(with: URL(string: postImageUrl))
+        
+// Прописываю констрейнты у UIImageView кодом
+        postImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            postImage.topAnchor.constraint(equalTo: self.topAnchor),
+            postImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            postImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            postImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+        
+    }
     
 }
 

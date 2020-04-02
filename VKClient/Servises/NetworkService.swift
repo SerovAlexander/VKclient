@@ -87,16 +87,16 @@ class NetworkService {
             "v": "5.77"
         ]
         
-        guard let id = id else { return }
+        if let id = id {
         params["owner_id"] = String(id)
-          
+        }
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON { response in
             DispatchQueue.global().async {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-//                    print(json)
+
                     let newJSON = json["response"]["items"].arrayValue
                     let userPhotos = newJSON.map {UserPhoto($0)}
                     completion(.success(userPhotos))

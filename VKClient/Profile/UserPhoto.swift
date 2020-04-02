@@ -13,12 +13,14 @@ import RealmSwift
 class UserPhoto: Object {
     
   @objc dynamic var id: Int = 0
+  @objc dynamic var OwnerId: Int = 0
   var sizes = List<Size>()
     
     convenience init(_ json: JSON) {
         self.init()
         
         self.id = json["id"].intValue
+        self.OwnerId = json["owner_id"].intValue
         let sizesArr = json["sizes"].map {Size($1)}
         print(sizesArr)
         self.sizes.append(objectsIn: sizesArr)

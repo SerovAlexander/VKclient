@@ -135,22 +135,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "98362649-E3EE-4ECF-977F-2EF43CC93D1B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VKClient/Servises/NetworkService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getPhotos(id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F3930300-9CCA-4F8E-A5FD-2653AF058B4A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -731,8 +715,8 @@
             filePath = "VKClient/Profile/UserPhoto.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "init(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -859,8 +843,8 @@
             filePath = "VKClient/Profile/UserPhoto.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "init(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -917,7 +901,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "70125F4B-252A-446D-9C9A-0C3895E75E94"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKClient/Servises/NetworkService.swift"
@@ -939,10 +923,309 @@
             filePath = "VKClient/Profile/ProfileVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F2A772F-D70D-47F7-A4C2-0AC37DEC556C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient/Profile/ProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "ProfileVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "7F2A772F-D70D-47F7-A4C2-0AC37DEC556C - 54ca186ab3e5dd6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient.ProfileVC.userId.getter : Swift.Optional&lt;Swift.Int&gt;"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Profile/ProfileVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "7F2A772F-D70D-47F7-A4C2-0AC37DEC556C - b2cc77e958a45163"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient.ProfileVC.userId.setter : Swift.Optional&lt;Swift.Int&gt;"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Profile/ProfileVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  uuid = "7F2A772F-D70D-47F7-A4C2-0AC37DEC556C - c7c5bb56918f7192"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient.ProfileVC.userId.modify : Swift.Optional&lt;Swift.Int&gt;"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Profile/ProfileVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "7F2A772F-D70D-47F7-A4C2-0AC37DEC556C - 2f4795996c084a63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient.ProfileVC.userId.modify : Swift.Optional&lt;Swift.Int&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Profile/ProfileVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "7F2A772F-D70D-47F7-A4C2-0AC37DEC556C - 3c9cea48c1167564"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient.ProfileVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; VKClient.ProfileVC"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Profile/ProfileVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "7F2A772F-D70D-47F7-A4C2-0AC37DEC556C - b2766656e8ac0013"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient.ProfileVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;VKClient.ProfileVC&gt;"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Profile/ProfileVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "637">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76CA022B-60AF-4369-8294-4B8A8A9DC221"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient/Profile/ProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76CA022B-60AF-4369-8294-4B8A8A9DC221 - b2fb9debd5ab2aa8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VKClient.ProfileVC.viewDidLoad() -&gt; ()"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Profile/ProfileVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  uuid = "76CA022B-60AF-4369-8294-4B8A8A9DC221 - a5f9b086a0ba1955"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.Result&lt;Swift.Array&lt;VKClient.UserPhoto&gt;&gt;) -&gt; () in VKClient.ProfileVC.viewDidLoad() -&gt; ()"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Profile/ProfileVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "217">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FD8FACF-46C8-4FCA-AE24-7B2D79EB3CC5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient/Profile/ProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E729666-77B1-4890-85F4-995F56F782B0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient/Profile/ProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB8B9DA5-8A49-45CC-929C-A0960D85C7A7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient/Profile/ProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD0DCEC2-3D72-483C-BA8A-1D6C456AB44E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient/Profile/ProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3C24B69D-320D-4DC9-B78A-12C751FF98F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient/Profile/ProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43FDC726-7BC4-45F5-8F2D-A534720C0111"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKClient/Servises/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getPhotos(id:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "43FDC726-7BC4-45F5-8F2D-A534720C0111 - e01cdb521e0c5ec3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static VKClient.NetworkService.getPhotos(id: Swift.Optional&lt;Swift.Int&gt;, completion: (Alamofire.Result&lt;Swift.Array&lt;VKClient.UserPhoto&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Servises/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "1074">
+               </Location>
+               <Location
+                  uuid = "43FDC726-7BC4-45F5-8F2D-A534720C0111 - 2399ae181d4c5e03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static VKClient.NetworkService.getPhotos(id: Swift.Optional&lt;Swift.Int&gt;, completion: (Alamofire.Result&lt;Swift.Array&lt;VKClient.UserPhoto&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Servises/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "43FDC726-7BC4-45F5-8F2D-A534720C0111 - d9fb7d0ef590a1c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static VKClient.NetworkService.getPhotos(id: Swift.Optional&lt;Swift.Int&gt;, completion: (Alamofire.Result&lt;Swift.Array&lt;VKClient.UserPhoto&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VKClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/VKClientSA/VKclient/VKClient/Servises/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "105">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

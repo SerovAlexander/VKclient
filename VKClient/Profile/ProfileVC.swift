@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 import Alamofire
-import RealmSwift
 
 class ProfileVC: UIViewController {
     
@@ -17,7 +16,9 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var userPhoto: UIImageView?
     @IBOutlet var nameLanel: UILabel?
     
-    private lazy var photos =  try? Realm().objects(UserPhoto.self)
+    var photosss = [UserPhoto]()
+    
+    
     
     var userId: Int?
     
@@ -26,16 +27,14 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let realm = try! Realm()
-        let userPhotos = realm.objects(UserPhoto.self)
-        print(userId)
-//Делаю запрос на получение фотографий профиля
+        
+        //Делаю запрос на получение фотографий профиля
         
         NetworkService.getPhotos(id: userId){[weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let userPhotos):
-                DataBase.save(items: userPhotos)
+                self.photosss = userPhotos
                 DispatchQueue.main.sync {
                     self.photosCollectionView.reloadData()
                 }
@@ -48,12 +47,13 @@ class ProfileVC: UIViewController {
 
 extension ProfileVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos?.count ?? 0
+        return photosss.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
-        guard let userPhotos = photos?[indexPath.row].sizes else { return cell }
+        
+        let userPhotos = photosss[indexPath.row].sizes
         
         var photoSize: Size = userPhotos[0]
         for size in userPhotos {
@@ -62,9 +62,9 @@ extension ProfileVC: UICollectionViewDataSource {
                 break
             }
         }
-      
+        
         cell.configure(with: photoSize)
-    
+        
         return cell
     }
 }

@@ -310,20 +310,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupCell" id="D5a-LX-imk" customClass="MyGroupCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="37.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D5a-LX-imk" id="yq2-ak-9yI">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llx-9u-RBy">
-                                            <rect key="frame" x="20" y="8" width="394" height="21.5"/>
+                                            <rect key="frame" x="20" y="8" width="394" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="71D-UL-2Ux">
-                                            <rect key="frame" x="381.5" y="5" width="27.5" height="27.5"/>
+                                            <rect key="frame" x="382" y="5" width="27" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="71D-UL-2Ux" secondAttribute="height" multiplier="1:1" id="Wdl-Gx-cQl"/>
                                             </constraints>
@@ -592,21 +592,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-di-c0s">
-                                            <rect key="frame" x="15" y="7" width="30" height="30"/>
+                                            <rect key="frame" x="15" y="12" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Ay9-di-c0s" secondAttribute="height" id="9VG-GR-fa3"/>
-                                                <constraint firstAttribute="width" constant="30" id="n9C-7m-0nF"/>
+                                                <constraint firstAttribute="width" constant="20" id="n9C-7m-0nF"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="EmptyHeart"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <state key="normal" title="Button" image="heart" catalog="system">
+                                                <color key="titleColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="setLike:" destination="vtG-wt-EjQ" eventType="touchUpInside" id="D5c-xX-i8E"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViO-Ey-PpV">
-                                            <rect key="frame" x="53" y="11.5" width="42" height="21"/>
+                                            <rect key="frame" x="43" y="11.5" width="42" height="21"/>
+                                            <color key="tintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="highlightedColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -710,9 +714,9 @@
     </scenes>
     <resources>
         <image name="David" width="128" height="85"/>
-        <image name="EmptyHeart" width="40" height="40"/>
         <image name="Friend" width="24" height="24"/>
         <image name="Group" width="24" height="24"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="profile" width="24" height="24"/>
         <image name="safari" catalog="system" width="128" height="121"/>
     </resources>

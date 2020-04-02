@@ -30,7 +30,6 @@ class NewsContentCell: UITableViewCell {
                 let user = sourceDB.first
                 else { return }
             postImageUrl = size.url
-            //                    news?.postPhoto.first?.sizes.first?.url ?? ""
             
         } else {
             sourceId = -sourceId

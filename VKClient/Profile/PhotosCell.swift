@@ -13,6 +13,7 @@ class PhotosCell: UICollectionViewCell {
     
     
     public func configure(with userPhoto: Size) {
+        
         let url = URL(string: userPhoto.url)
         userPhotos.kf.setImage(with: url)
     }

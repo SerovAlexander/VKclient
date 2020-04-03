@@ -71,6 +71,9 @@ class newAllFriendsVCTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
         vc.userId = user.id
+        vc.firstName = user.firstName
+        vc.secondName = user.secondName
+        vc.avatar = user.avatar
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

@@ -22,6 +22,7 @@
 		0466F62823F5D50600178A30 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466F62723F5D50600178A30 /* UserPhoto.swift */; };
 		0466F62A23F6FCA200178A30 /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466F62923F6FCA200178A30 /* PhotosCell.swift */; };
 		046E37302316CDEA00402C74 /* AvatarShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E372F2316CDEA00402C74 /* AvatarShadowView.swift */; };
+		04815F192437280A0046F486 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04815F182437280A0046F486 /* Account.swift */; };
 		0483A6912348F22100FDCBD2 /* newAllFriendsVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483A6902348F22100FDCBD2 /* newAllFriendsVCTableViewController.swift */; };
 		0493A58C22F435EC0025E7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493A58B22F435EC0025E7C9 /* AppDelegate.swift */; };
 		0493A58E22F435EC0025E7C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493A58D22F435EC0025E7C9 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		0466F62723F5D50600178A30 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPhoto.swift; path = VKClient/Profile/UserPhoto.swift; sourceTree = SOURCE_ROOT; };
 		0466F62923F6FCA200178A30 /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		046E372F2316CDEA00402C74 /* AvatarShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarShadowView.swift; sourceTree = "<group>"; };
+		04815F182437280A0046F486 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		0483A6902348F22100FDCBD2 /* newAllFriendsVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newAllFriendsVCTableViewController.swift; sourceTree = "<group>"; };
 		0493A58822F435EC0025E7C9 /* VKClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0493A58B22F435EC0025E7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				04961ABD230C024E004F0F4E /* User.swift */,
 				041D1937231FBD2900B48FB3 /* News.swift */,
 				0466F62723F5D50600178A30 /* UserPhoto.swift */,
+				04815F182437280A0046F486 /* Account.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				044781B2233A8A4100CFED44 /* LoginViewController.swift in Sources */,
 				0433CAA7240C1CCA00EEA0B9 /* NewsContentCell.swift in Sources */,
 				04BDC7D02404122100EC393F /* NewsTopXIBCell.swift in Sources */,
+				04815F192437280A0046F486 /* Account.swift in Sources */,
 				0438E72423E1B6E5002EB1B4 /* PhotoService.swift in Sources */,
 				04D8C5562406D1CD00FE9203 /* NewsTextCell.swift in Sources */,
 				0466F62A23F6FCA200178A30 /* PhotosCell.swift in Sources */,

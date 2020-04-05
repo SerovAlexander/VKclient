@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Alamofire
+import Kingfisher
 
 class ProfileVC: UIViewController {
     
@@ -21,8 +22,9 @@ class ProfileVC: UIViewController {
     
     
     var userId: Int?
-    
-    
+    var firstName: String = ""
+    var secondName: String = ""
+    var avatar: String?
     
     override func viewDidLoad() {
         
@@ -64,7 +66,11 @@ extension ProfileVC: UICollectionViewDataSource {
         }
         
         cell.configure(with: photoSize)
+        nameLanel?.text = firstName + " " + secondName
+        let url = URL(string: avatar ?? "")
+        userPhoto?.kf.setImage(with: url)
         
+
         return cell
     }
 }

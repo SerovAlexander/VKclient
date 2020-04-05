@@ -22,7 +22,6 @@ class UserPhoto: Object {
         self.id = json["id"].intValue
         self.OwnerId = json["owner_id"].intValue
         let sizesArr = json["sizes"].map {Size($1)}
-        print(sizesArr)
         self.sizes.append(objectsIn: sizesArr)
         
     }

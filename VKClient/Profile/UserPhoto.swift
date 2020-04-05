@@ -13,12 +13,14 @@ import RealmSwift
 class UserPhoto: Object {
     
   @objc dynamic var id: Int = 0
+  @objc dynamic var OwnerId: Int = 0
   var sizes = List<Size>()
     
     convenience init(_ json: JSON) {
         self.init()
         
         self.id = json["id"].intValue
+        self.OwnerId = json["owner_id"].intValue
         let sizesArr = json["sizes"].map {Size($1)}
         self.sizes.append(objectsIn: sizesArr)
         
@@ -35,6 +37,11 @@ class Size: Object {
     @objc dynamic var height: Int = 0
     @objc dynamic var width: Int = 0
     
+    var aspectRatio: CGFloat? {
+        guard width != 0 else { return nil }
+        return CGFloat(height)/CGFloat(width)
+    }
+    
     convenience init(_ json: JSON) {
     self.init()
     
@@ -45,3 +52,5 @@ class Size: Object {
     
     }
 }
+
+

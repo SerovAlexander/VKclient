@@ -31,7 +31,7 @@ class NetworkService {
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseData {response in
             DispatchQueue.global().async {
-// Блок кода парсинга списка групп асинхронно на глобальной очереди
+                // Блок кода парсинга списка групп асинхронно на глобальной очереди
                 switch response.result {
                 case .success(let data):
                     let decoder = JSONDecoder()
@@ -60,7 +60,7 @@ class NetworkService {
         ]
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON {response in
-// Блок кода парсинга списка друзей асинхронно на глобальной очереди
+            // Блок кода парсинга списка друзей асинхронно на глобальной очереди
             DispatchQueue.global().async {
                 switch response.result {
                 case .success(let value):
@@ -77,24 +77,28 @@ class NetworkService {
     
     // Функция для получения фотографий пользователя
     
-    static func getPhotos(completion: @escaping (Result<[UserPhoto]>) -> Void) {
+    static func getPhotos(id: Int?, completion: @escaping (Result<[UserPhoto]>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/photos.getAll"
         
-        let params: Parameters = [
+        var params: Parameters = [
             "access_token": Session.shared.token,
             "no_service_albums": "0",
             "v": "5.77"
         ]
+        
+        if let id = id {
+            params["owner_id"] = String(id)
+        }
         
         NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON { response in
             DispatchQueue.global().async {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
+                    
                     let newJSON = json["response"]["items"].arrayValue
                     let userPhotos = newJSON.map {UserPhoto($0)}
-                    print(userPhotos)
                     completion(.success(userPhotos))
                 case .failure(let error):
                     completion(.failure(error))
@@ -103,7 +107,7 @@ class NetworkService {
         }
     }
     
-// Функция для получения новостей пользователя
+    // Функция для получения новостей пользователя
     
     static func getNews(comletion: @escaping (Result<[News]>) -> Void) {
         let baseUrl = "https://api.vk.com"
@@ -130,6 +134,28 @@ class NetworkService {
                     comletion(.failure(error))
                 }
             }
+        }
+    }
+    
+    // Функция для получения данных пользователя
+    
+    static func getProfileInfo(completion: @escaping (Result<[Account]>) -> Void) {
+        let baseUrl = "https://api.vk.com"
+        let path = "/method/account.getProfileInfo"
+        
+        NetworkService.sessionRequest.request(baseUrl + path, method: .get).responseJSON
+            { response in
+                DispatchQueue.global().async {
+                    switch response.result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        let profileJSON = json["response"].arrayValue
+                        let profile = profileJSON.map {Account($0)}
+                        completion(.success(profile))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
         }
     }
 }

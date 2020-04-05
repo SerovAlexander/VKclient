@@ -21,14 +21,6 @@ class NewsContentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.postImage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.postImage.topAnchor.constraint(equalTo: self.topAnchor),
-            self.postImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.postImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.postImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
-        
     }
     
     public func configure(with news: News?, and size: Size) {
@@ -59,6 +51,13 @@ class NewsContentCell: UITableViewCell {
         postImage?.kf.setImage(with: URL(string: postImageUrl))
         
 // Прописываю констрейнты у UIImageView кодом
+        postImage.translatesAutoresizingMaskIntoConstraints = false
+               NSLayoutConstraint.activate([
+                   postImage.topAnchor.constraint(equalTo: self.topAnchor),
+                   postImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                   postImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                   postImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+               ])
         
     }
     

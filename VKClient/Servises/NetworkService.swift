@@ -126,7 +126,6 @@ class NetworkService {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    print(json)
                     let newJSON = json["response"]["items"].arrayValue
                     let news = newJSON.map {News($0)}
                     comletion(.success(news))
@@ -139,18 +138,23 @@ class NetworkService {
     
     // Функция для получения данных пользователя
     
-    static func getProfileInfo(completion: @escaping (Result<[Account]>) -> Void) {
+    static func getProfileInfo(completion: @escaping (Result<Account>) -> Void) {
         let baseUrl = "https://api.vk.com"
         let path = "/method/account.getProfileInfo"
+        let params: Parameters = [
+            "access_token": Session.shared.token,
+            "v": "5.103"
+        ]
         
-        NetworkService.sessionRequest.request(baseUrl + path, method: .get).responseJSON
+        NetworkService.sessionRequest.request(baseUrl + path, method: .get, parameters: params).responseJSON
             { response in
                 DispatchQueue.global().async {
                     switch response.result {
                     case .success(let value):
                         let json = JSON(value)
-                        let profileJSON = json["response"].arrayValue
-                        let profile = profileJSON.map {Account($0)}
+                        print(json)
+                        let profileJSON = json["response"]
+                        let profile = Account(profileJSON)
                         completion(.success(profile))
                     case .failure(let error):
                         completion(.failure(error))

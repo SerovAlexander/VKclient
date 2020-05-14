@@ -69,7 +69,6 @@ extension ProfileVC: UICollectionViewDataSource {
         nameLanel?.text = firstName + " " + secondName
         let url = URL(string: avatar ?? "")
         userPhoto?.kf.setImage(with: url)
-        
 
         return cell
     }

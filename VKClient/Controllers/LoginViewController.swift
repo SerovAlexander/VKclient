@@ -65,12 +65,15 @@ extension LoginViewController: WKNavigationDelegate {
         }
         
         let token = params["access_token"]
+        let id = params["user_id"]
         
         // Лучше переделать через проверку, получени ли токен или нет!
         
         Session.shared.token = (token ?? "token is empty")!
+        Session.shared.id = (id ?? "id did not found")!
         
-        print(Session.shared.token)
+        print("Token: \(Session.shared.token)")
+        print("Id: \(Session.shared.id)")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController")

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0404DDE3243A2CA000BCB9EF /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404DDE2243A2CA000BCB9EF /* AccountVC.swift */; };
+		0404DDE6243A3DC700BCB9EF /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404DDE5243A3DC700BCB9EF /* AccountCell.swift */; };
 		04138D41237040310050D35D /* NewMyGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04138D40237040310050D35D /* NewMyGroupVC.swift */; };
 		041D1938231FBD2900B48FB3 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D1937231FBD2900B48FB3 /* News.swift */; };
 		0433CAA7240C1CCA00EEA0B9 /* NewsContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433CAA6240C1CCA00EEA0B9 /* NewsContentCell.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0404DDE2243A2CA000BCB9EF /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		0404DDE5243A3DC700BCB9EF /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		04138D40237040310050D35D /* NewMyGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMyGroupVC.swift; sourceTree = "<group>"; };
 		041D1937231FBD2900B48FB3 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = VKClient/News/News.swift; sourceTree = SOURCE_ROOT; };
 		0433CAA6240C1CCA00EEA0B9 /* NewsContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentCell.swift; sourceTree = "<group>"; };
@@ -75,8 +79,10 @@
 		04D8C5552406D1CD00FE9203 /* NewsTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTextCell.swift; sourceTree = "<group>"; };
 		04EBC98C24165A0500540AE7 /* NewsContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		04F53FE423094C78009D0477 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		12F9842F82B0FEA34DAEB2A5 /* Pods-VKClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.release.xcconfig"; sourceTree = "<group>"; };
 		89E5A775F45BAF9774C6923F /* Pods-VKClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.release.xcconfig"; sourceTree = "<group>"; };
 		9EB31D2DC294FC3E0926BCEB /* Pods_VKClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABEDC92614E02367CDBB7487 /* Pods-VKClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.debug.xcconfig"; sourceTree = "<group>"; };
 		E89F0B36074A56D8B2DB8F3C /* Pods-VKClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0404DDE4243A2D5000BCB9EF /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				0404DDE2243A2CA000BCB9EF /* AccountVC.swift */,
+				0404DDE5243A3DC700BCB9EF /* AccountCell.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		045BFE0B2306E006008CB552 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +117,7 @@
 				04BDC7CC24040F1900EC393F /* newNews */,
 				0466F62423F5B6F400178A30 /* Profile */,
 				045BFE3123082562008CB552 /* MyGroups */,
+				0404DDE4243A2D5000BCB9EF /* Account */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,8 +167,8 @@
 			children = (
 				0493A58A22F435EC0025E7C9 /* VKClient */,
 				0493A58922F435EC0025E7C9 /* Products */,
-				9C2318885B59CC90F31E4196 /* Pods */,
 				B6AABF6A733CDD8038F0B0D8 /* Frameworks */,
+				980167BEA0BAA1B32A333844 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +192,7 @@
 				0493A59222F435ED0025E7C9 /* Assets.xcassets */,
 				0493A59422F435ED0025E7C9 /* LaunchScreen.storyboard */,
 				0493A59722F435ED0025E7C9 /* Info.plist */,
+				9C2318885B59CC90F31E4196 /* Pods */,
 				04BE54D7233D156600BB356B /* Session.swift */,
 			);
 			path = VKClient;
@@ -214,6 +231,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		980167BEA0BAA1B32A333844 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDC92614E02367CDBB7487 /* Pods-VKClient.debug.xcconfig */,
+				12F9842F82B0FEA34DAEB2A5 /* Pods-VKClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9C2318885B59CC90F31E4196 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +247,7 @@
 				89E5A775F45BAF9774C6923F /* Pods-VKClient.release.xcconfig */,
 			);
 			name = Pods;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B6AABF6A733CDD8038F0B0D8 /* Frameworks */ = {
@@ -374,8 +401,10 @@
 				04138D41237040310050D35D /* NewMyGroupVC.swift in Sources */,
 				044781B2233A8A4100CFED44 /* LoginViewController.swift in Sources */,
 				0433CAA7240C1CCA00EEA0B9 /* NewsContentCell.swift in Sources */,
+				0404DDE6243A3DC700BCB9EF /* AccountCell.swift in Sources */,
 				04BDC7D02404122100EC393F /* NewsTopXIBCell.swift in Sources */,
 				04815F192437280A0046F486 /* Account.swift in Sources */,
+				0404DDE3243A2CA000BCB9EF /* AccountVC.swift in Sources */,
 				0438E72423E1B6E5002EB1B4 /* PhotoService.swift in Sources */,
 				04D8C5562406D1CD00FE9203 /* NewsTextCell.swift in Sources */,
 				0466F62A23F6FCA200178A30 /* PhotosCell.swift in Sources */,

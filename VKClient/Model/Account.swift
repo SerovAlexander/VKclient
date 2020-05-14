@@ -12,11 +12,16 @@ import SwiftyJSON
 class Account {
     @objc dynamic var firstName: String = ""
     @objc dynamic var lastName: String = ""
+    @objc dynamic var homeTown: String = ""
     
     convenience init(_ json: JSON) {
         self.init()
         
         self.firstName = json["first_name"].stringValue
         self.lastName = json["last_name"].stringValue
+        self.homeTown = json["home_town"].stringValue
     }
 }
+
+
+

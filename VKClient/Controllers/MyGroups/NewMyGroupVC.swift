@@ -11,14 +11,19 @@ import RealmSwift
 
 class NewMyGroupVC: UITableViewController {
     
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     private var token: NotificationToken?
     private var photoService: PhotoService?
     
     private lazy var newGroup = try? Realm().objects(Items.self)
     
+    var filteredGroups = [Items]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        filteredGroups = Array(newGroup!)
+        searchBar.delegate = self
+        
             let realm = try! Realm()
             let newGroup = realm.objects(Items.self)
             self.token = newGroup.observe { change in
@@ -50,23 +55,40 @@ class NewMyGroupVC: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return newGroup?.count ?? 0
+       
+        return filteredGroups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGroupCell", for: indexPath) as! MyGroupCell
-        guard let group = newGroup?[indexPath.row] else {return cell}
+        let group = filteredGroups[indexPath.row]
         cell.configure(with: group)
-//        photoService = PhotoService(container: tableView)
-//        var urlString = group.photo_100
-//        cell.groupName.text = group.name
-//        cell.groupImage.image = photoService?.photo(atIndexpath: indexPath, urlString: urlString)
+        
         return cell
     }
     
     
     
     
+    
+}
+
+extension NewMyGroupVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+       
+        guard let newGroup = newGroup else { return }
+        
+        if searchText.isEmpty == false{
+            filteredGroups = Array((newGroup.filter({$0.name.lowercased().contains(searchText.lowercased())})))
+        } else {
+            filteredGroups = Array(newGroup)
+        }
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
     
 }

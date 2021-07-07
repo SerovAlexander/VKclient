@@ -9,14 +9,20 @@
 import UIKit
 import RealmSwift
 
-class newAllFriendsVCTableViewController: UITableViewController {
+class newAllFriendsVCTableViewController: UITableViewController, UISearchBarDelegate {
     
     var token: NotificationToken?
+    
+    @IBOutlet var searchBar: UITableView!
     
     private lazy var users = try? Realm().objects(User.self).sorted(byKeyPath: "id")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Реализация делегата внутри класса newAllFriendsVCTableViewController
+        searchBar.delegate = self
+        
             let realm = try! Realm()
             let users = realm.objects(User.self)
             self.token = users.observe { change in
@@ -34,16 +40,15 @@ class newAllFriendsVCTableViewController: UITableViewController {
                 }
                 
             }
-
-        DispatchQueue.global().async {
-            NetworkService.loadFriends { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let users):
-                    DataBase.save(items: users)
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
-                }
+       
+// Делаю запрос на получения списка друзей
+        NetworkService.loadFriends { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let users):
+                DataBase.save(items: users)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
     }
@@ -56,11 +61,39 @@ class newAllFriendsVCTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllFriendCell", for: indexPath) as! AllFriendCell
-        guard let user = users?[indexPath.row] else {return cell}
+        guard let user = users?[indexPath.row] else { return cell }
         cell.configure(with: user)
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let user = users?[indexPath.row] else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
+        vc.userId = user.id
+        vc.firstName = user.firstName
+        vc.secondName = user.secondName
+        vc.avatar = user.avatar
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
 }
+
+// Расширения класса для реализации работы SearchBar
+//extension newAllFriendsVCTableViewController: UISearchBarDelegate {
+//
+//
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        print(searchText)
+//    }
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        print("Кнопка")
+//    }
+//}
+
